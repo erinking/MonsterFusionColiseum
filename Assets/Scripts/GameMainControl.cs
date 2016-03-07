@@ -10,12 +10,40 @@ public class GameMainControl : MonoBehaviour {
 	   public string name;
        public bool isCPU;
 		public List<string> myCards;
+		public int STR;
+		public int DEF;
+		public int AGI;
         public Player(string name, bool isCPU){
 			this.name = name;
             this.isCPU = isCPU;
 			this.myCards = new List<string>();
+			this.STR = 0;
+			this.DEF = 0;
+			this.AGI = 0;
         }
     }
+
+	private enum CardType {Monster, Weapon, Element};
+	class Kard{
+		public string name;
+		public CardType category;
+		public int STR;
+		public int DEF;
+		public int AGI;
+		public Kard(string name, CardType category, int STR, int DEF, int AGI){
+			this.name = name;
+			this.category = category;
+			this.STR = STR;
+			this.DEF = DEF;
+			this.AGI = AGI;
+		}
+	}
+
+	List<string> allBaseElementNames = new List<string>(){"fire","water","earth","air"};
+	List<string> allBaseMonsterNames = new List<string>(){"skink","fairy","undead","blobfish","human"};
+	List<string> allBaseWeaponNames = new List<string>(){"dagger","meatstick","staff","bow"};
+
+	List<string> otherCards = new List<string>(){"+STR","+DEF","+AGI","++STR","++DEF","++AGI","+++STR","+++DEF","+++AGI"};
 
     List<Player> playerList = new List<Player>(){};
 	List<Player> playerOrder = new List<Player>(){};
@@ -32,11 +60,18 @@ public class GameMainControl : MonoBehaviour {
 	public int dealAmount = 2;
 	public int dealAmountOffset = 1;
 
-	public int NUMBER_OF_DRAFTING_ROUNDS = 6;
-	public int DECK_SIZE = 60;
+	public int NUMBER_OF_DRAFTING_ROUNDS = 10;
+	public int DECK_SIZE = 160;
 
 	public bool PICK_ONCE_PER_ROUND = true;
 	public bool DEALT_CARDS_AMOUNT_CONSTANT = true;
+	public bool acceptInput = false;
+	public bool isCardSelected = false;
+
+	public float CPU_THINK_DELAY = 1.5f;
+	public float TIME_BETWEEN_TURNS = 1.4f;
+
+	public Color ACTIVE_PLAYER_COLOR = new Color (0.1f, 0.9f, 0.2f, 0.8f);
 
 
 	// Use this for initialization
@@ -63,12 +98,12 @@ public class GameMainControl : MonoBehaviour {
 			if (round == 0)
 			{
 				// Players select their characters
-				yield return StartCoroutine (InitialCharacterSelect ());
+				yield return StartCoroutine (InitialCharacterSelect());
 			}
-			if (round == 1) 
+			else if (round == 1) 
 			{
 				// Players select their weapons in reverse order
-				yield return StartCoroutine (InitialWeaponSelect ());
+				yield return StartCoroutine (InitialWeaponSelect());
 			} 
 			else
 			{
@@ -100,7 +135,7 @@ public class GameMainControl : MonoBehaviour {
 		playerList.Add(new Player ("Player 1", false));
 		playerList.Add(new Player ("AI Opponent 1", true));
 		// PlayerOrder is a list used to run the game turns and picking order.
-		playerOrder = playerList;
+		playerOrder = new List<Player>(playerList);
 		yield return StartCoroutine(UpdatePlayersDisplay());
 		yield return null;
 	}
@@ -122,7 +157,8 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	string GenerateRandomCard()
 	{
-		return "Im a Card!" + Random.Range(0,100).ToString();
+		return otherCards[Random.Range(0,otherCards.Count)];
+		//return "Im a Card!" + Random.Range(0,100).ToString();
 	}
 
 	/// <summary>
@@ -137,10 +173,25 @@ public class GameMainControl : MonoBehaviour {
     /// Pick your base character from some starting set.
     /// </summary>
     IEnumerator InitialCharacterSelect()
-    {
-		
-		StartCoroutine(DealCards(characterSelect:true));
+	{
+		yield return StartCoroutine(DealCards(characterSelect:true));
+		yield return StartCoroutine(TakeTurnsPicking());
+		yield return StartCoroutine(AddBackRemainingCards());
+        yield return null;
+    }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    IEnumerator InitialWeaponSelect()
+    {
+		yield return StartCoroutine(SetPickingOrder(reversed: true));
+		// Select your weapon.
+		yield return StartCoroutine(DealCards(weaponSelect:true));
+		yield return StartCoroutine (TakeTurnsPicking());
+		yield return StartCoroutine(AddBackRemainingCards());
+		// Reverse order back at the end.
+		yield return StartCoroutine(SetPickingOrder(reversed: true));
         yield return null;
     }
 
@@ -152,8 +203,10 @@ public class GameMainControl : MonoBehaviour {
 		dealAmount = playerOrder.Count * 2;
 		if (characterSelect) {
 			//show only base characters
+			dealtCards = new List<string>(allBaseMonsterNames);
 		} else if (weaponSelect) {
 			//show only base weapons
+			dealtCards = new List<string>(allBaseWeaponNames);
 		} else {
 			dealtCards = draftingDeck.GetRange(0, dealAmount);
 			draftingDeck.RemoveRange(0, dealAmount);
@@ -163,18 +216,15 @@ public class GameMainControl : MonoBehaviour {
 
 	}
 
-    /// <summary>
-    /// 
-    /// </summary>
-    IEnumerator InitialWeaponSelect()
-    {
-		StartCoroutine(SetPickingOrder(reversed: true));
-		// Select your weapon.
-
-		// Reverse it back at the end.
-		StartCoroutine(SetPickingOrder(reversed: true));
-        yield return null;
-    }
+	/// <summary>
+	/// Adds the back the remaining dealt cards to the deck.
+	/// </summary>
+	IEnumerator AddBackRemainingCards()
+	{
+		draftingDeck.AddRange(dealtCards);
+		dealtCards.Clear();
+		yield return StartCoroutine(ShuffleDeck());
+	}
 
     /// <summary>
     /// Set who picks first and what order the other players pick.
@@ -199,11 +249,16 @@ public class GameMainControl : MonoBehaviour {
 		foreach (Player player in playerOrder) 
 		{
 			currentPlayer = player;
+			yield return StartCoroutine(UpdatePlayersDisplay());
 			if (!player.isCPU) {
 				yield return StartCoroutine(PlayerPicksCard(player));
 			} else {
+				yield return new WaitForSeconds(CPU_THINK_DELAY);
 				yield return StartCoroutine(PickCardRandomly(player));
 			}
+			StartCoroutine(UpdateCardsDisplay());
+			currentPlayer = null;
+			StartCoroutine(EndTurn());
 		}
         yield return null;
     }
@@ -213,8 +268,14 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	IEnumerator PlayerPicksCard(Player player)
 	{
-		yield return new WaitForSeconds(1.0f);
-		// wait until player selects card.
+		acceptInput = true;
+		while (!isCardSelected) {
+			// wait until player selects card.
+			yield return null;
+		}
+		acceptInput = false;
+		//stuff
+		isCardSelected = false;
 		yield return null;
 	}
 
@@ -227,7 +288,28 @@ public class GameMainControl : MonoBehaviour {
 		string pickedCard = dealtCards[randomIndex];
 		player.myCards.Add(pickedCard);
 		dealtCards.RemoveAt(randomIndex);
+		FusePick(pickedCard);
 		yield return null;
+	}
+
+	/// <summary>
+	/// Select a card in play for the current player.
+	/// </summary>
+	void PickCard(string card)
+	{
+		if (acceptInput) {
+			int cardIndex = dealtCards.IndexOf (card);
+			//print ("index: " + cardIndex + ", card: " + card);
+			currentPlayer.myCards.Add (card);
+			dealtCards.RemoveAt (cardIndex);
+			FusePick (card);
+			isCardSelected = true;
+		}
+	}
+
+	IEnumerator EndTurn(){
+		yield return StartCoroutine(UpdatePlayersDisplay());
+		yield return new WaitForSeconds(TIME_BETWEEN_TURNS);
 	}
 
     /// <summary>
@@ -235,9 +317,11 @@ public class GameMainControl : MonoBehaviour {
     /// </summary>
     IEnumerator EndOfDrafting()
     {
+		dealtCards.Clear();
+		yield return StartCoroutine(UpdateCardsDisplay());
 		foreach (Player player in playerList) {
 			foreach (string card in player.myCards) {
-				print (player.name + ":" + card);
+				//print (player.name + ":" + card);
 			}
 		}
         yield return null;
@@ -248,9 +332,58 @@ public class GameMainControl : MonoBehaviour {
     /// </summary>
     IEnumerator Battle()
     {
-        yield return null;
-    }
+		Dictionary<Player,int> scores = new Dictionary<Player,int>();
+		foreach (Player player in playerList){
+			int score = 0; // Against how many other players do they win?
+			foreach (Player opponent in playerList) {
+				if((player.STR > opponent.STR && player.DEF > opponent.DEF)||
+					(player.STR > opponent.STR && player.AGI > opponent.AGI)||
+					(player.DEF > opponent.DEF && player.AGI > opponent.AGI))
+				{
+					score++;
+				}
+			}
+			scores [player] = score;
+			print (player.name + " : " + score.ToString ());
 
+
+        yield return null;
+   		}
+	}
+
+	void FusePick(string card){
+		string statType = card.TrimStart(new char[]{'+'});
+		int statValue = card.LastIndexOf ("+") + 1;
+		switch (statType) {
+		case"STR":
+			currentPlayer.STR += statValue;
+			break;
+		case"DEF":
+			currentPlayer.DEF += statValue;
+			break;
+		case"AGI":
+			currentPlayer.AGI += statValue;
+			break;
+		}
+	}
+
+	/// <summary>
+	/// Adds the back the remaining dealt cards to the deck.
+	/// </summary>
+	IEnumerator ShuffleDeck()
+	{
+		string tempSwapHolder = "";
+		//draftingDeck.Sort();
+		for (int i = 0; i < draftingDeck.Count; i++) {
+			// Swap two cards
+			tempSwapHolder = draftingDeck[i];
+			int randomIndex = Random.Range(0, draftingDeck.Count);
+			string randomPick = draftingDeck[randomIndex];
+			draftingDeck[i] = randomPick;
+			draftingDeck[randomIndex] = tempSwapHolder;
+		}
+		yield return null;
+	}
 
 	IEnumerator UpdateCardsDisplay()
 	{
@@ -258,10 +391,13 @@ public class GameMainControl : MonoBehaviour {
 		{
 			Destroy(oldCard.gameObject);
 		}
-		foreach (string card in dealtCards)
+		for (int cardIndex = 0; cardIndex < dealtCards.Count; cardIndex++)
 		{
+			string card = dealtCards[cardIndex];
 			GameObject newCard = Instantiate(cardPrefab);
 			newCard.GetComponentInChildren<Text> ().text = card;
+			newCard.GetComponent<Button>().onClick.AddListener( () => PickCard (card));
+			//print (card + " " + cardIndex);
 
 			//newCard.GetComponentInChildren<Image>().color = Random.ColorHSV();
 
@@ -273,14 +409,28 @@ public class GameMainControl : MonoBehaviour {
 
 	IEnumerator UpdatePlayersDisplay()
 	{
-		foreach (Player player in playerOrder)
+		foreach (Transform oldPlayer in playersDisplay.transform)
+		{
+			Destroy(oldPlayer.gameObject);
+		}
+		foreach (Player player in playerList)
 		{
 			GameObject newPlayer = Instantiate(playerPrefab);
-			print(player);
 			newPlayer.GetComponentInChildren<Text>().text = player.name;
 			newPlayer.transform.SetParent(playersDisplay.transform);
+			newPlayer.transform.FindChild ("STR/Level").GetComponent<Text> ().text = player.STR.ToString ();
+			newPlayer.transform.FindChild ("DEF/Level").GetComponent<Text> ().text = player.DEF.ToString ();
+			newPlayer.transform.FindChild ("AGI/Level").GetComponent<Text> ().text = player.AGI.ToString ();
+			try{
+			newPlayer.transform.FindChild ("Character/Name").GetComponent<Text> ().text = player.myCards[0];
+			newPlayer.transform.FindChild ("Weapon/Name").GetComponent<Text> ().text = player.myCards[1];
+			}catch{
+
+			}
+			if (player == currentPlayer) {
+				newPlayer.GetComponent<Image>().color = ACTIVE_PLAYER_COLOR;
+			}
 		}
 		yield return null;
 	}
-
 }
