@@ -68,8 +68,8 @@ public class GameMainControl : MonoBehaviour {
 	public bool acceptInput = false;
 	public bool isCardSelected = false;
 
-	public float CPU_THINK_DELAY = 1.5f;
-	public float TIME_BETWEEN_TURNS = 1.4f;
+	public float CPU_THINK_DELAY = 100.5f;
+	public float TIME_BETWEEN_TURNS = 100.4f;
 
 	public Color ACTIVE_PLAYER_COLOR = new Color (0.1f, 0.9f, 0.2f, 0.8f);
 
@@ -256,9 +256,9 @@ public class GameMainControl : MonoBehaviour {
 				yield return new WaitForSeconds(CPU_THINK_DELAY);
 				yield return StartCoroutine(PickCardRandomly(player));
 			}
-			StartCoroutine(UpdateCardsDisplay());
+			yield return StartCoroutine(UpdateCardsDisplay());
 			currentPlayer = null;
-			StartCoroutine(EndTurn());
+			yield return StartCoroutine(EndTurn());
 		}
         yield return null;
     }
@@ -295,11 +295,11 @@ public class GameMainControl : MonoBehaviour {
 	/// <summary>
 	/// Select a card in play for the current player.
 	/// </summary>
-	void PickCard(string card)
+	public void PickCard(string card)
 	{
 		if (acceptInput) {
 			int cardIndex = dealtCards.IndexOf (card);
-			//print ("index: " + cardIndex + ", card: " + card);
+			print ("index: " + cardIndex + ", card: " + card +", thing in list there: "+dealtCards[cardIndex]);
 			currentPlayer.myCards.Add (card);
 			dealtCards.RemoveAt (cardIndex);
 			FusePick (card);
@@ -309,7 +309,9 @@ public class GameMainControl : MonoBehaviour {
 
 	IEnumerator EndTurn(){
 		yield return StartCoroutine(UpdatePlayersDisplay());
+		print("timer1");
 		yield return new WaitForSeconds(TIME_BETWEEN_TURNS);
+		print("timer2");
 	}
 
     /// <summary>
@@ -396,11 +398,12 @@ public class GameMainControl : MonoBehaviour {
 			string card = dealtCards[cardIndex];
 			GameObject newCard = Instantiate(cardPrefab);
 			newCard.GetComponentInChildren<Text> ().text = card;
-			newCard.GetComponent<Button>().onClick.AddListener( () => PickCard (card));
+			newCard.name = card;
+			//newCard.GetComponent<Button>().onClick.AddListener(() => {PickCard (card);});
 			//print (card + " " + cardIndex);
 
 			//newCard.GetComponentInChildren<Image>().color = Random.ColorHSV();
-
+			//newCard.AddComponent<UICardBehavior>();
 			newCard.transform.SetParent(dealtCardsDisplay.transform);
 		}
 		yield return null;
