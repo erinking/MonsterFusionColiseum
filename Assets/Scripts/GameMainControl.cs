@@ -8,38 +8,69 @@ public class GameMainControl : MonoBehaviour {
     
     public class Player{
 		public string name;
-		public string myCharacter;
-		public string myWeapon;
+		public Kard myCharacter;
+		public Kard myWeapon;
+		public Kard myElement;
     	public bool isCPU;
-		public List<string> myCards;
-		public int STR;
-		public int DEF;
-		public int AGI;
-		public int INT;
+		public List<Kard> myCards;
+		public float HP;
+		public float STR;
+		public float DEF;
+		public float AGI;
+		public float INT;
         public Player(string name, bool isCPU){
 			this.name = name;
             this.isCPU = isCPU;
-			this.myCards = new List<string>();
+			this.myCards = new List<Kard>();
+			this.HP = 100;
 			this.STR = 0;
 			this.DEF = 0;
 			this.AGI = 0;
+			this.INT = 0;
         }
     }
 
-	private enum CardType {Monster, Weapon, Element};
-	class Kard{
+	public enum CardType {Monster, Weapon, Element};
+	public class Kard{
 		public string name;
 		public CardType category;
-		public int STR;
-		public int DEF;
-		public int AGI;
-		public int INT;
-		public Kard(string name, CardType category, int STR, int DEF, int AGI){
+		public Sprite image;
+		public float HP;
+		public float STR;
+		public float DEF;
+		public float AGI;
+		public float INT;
+		public Kard(string name, CardType category, Sprite image, float HP, float STR, float DEF, float AGI, float INT){
 			this.name = name;
 			this.category = category;
+			this.image = image;
+			this.HP = HP;
 			this.STR = STR;
 			this.DEF = DEF;
 			this.AGI = AGI;
+			this.INT = INT;
+		}
+
+		public Kard(string name, CardType category, Sprite image){
+			this.name = name;
+			this.category = category;
+			this.image = image;
+			this.HP = 25;
+			this.STR = 1;
+			this.DEF = 1;
+			this.AGI = 1;
+			this.INT = 1;
+		}
+
+		public Kard(string name, CardType category){
+			this.name = name;
+			this.category = category;
+			this.image = null;
+			this.HP = 25;
+			this.STR = 1;
+			this.DEF = 1;
+			this.AGI = 1;
+			this.INT = 1;
 		}
 	}
 
@@ -47,19 +78,31 @@ public class GameMainControl : MonoBehaviour {
 	List<string> allBaseMonsterNames = new List<string>(){"skink","fairy","undead","blobfish","human"};
 	List<string> allBaseWeaponNames = new List<string>(){"dagger","meatstick","staff","bow"};
 
-	List<string> otherCards = new List<string>(){"+STR","+DEF","+AGI","+INT","++STR","++DEF","++AGI","++INT","+++STR","+++DEF","+++AGI","+++INT"};
+	List<string> otherCardNames = new List<string>(){"+STR","+DEF","+AGI","+INT","++STR","++DEF","++AGI","++INT","+++STR","+++DEF","+++AGI","+++INT"};
+	List<CardType> randomGenerationRatioList = new List<CardType>(){CardType.Monster,CardType.Weapon,CardType.Element};
+	public int amountOfMonstersInGenerationList = 1;
+	public int amountOfWeaponsInGenerationList = 1;
+	public int amountOfElementsInGenerationList = 1;
+
+	public Sprite[] monsterImageList = new Sprite[]{};
+	public Sprite[] weaponImageList = new Sprite[]{};
+	public Sprite[] elementImageList = new Sprite[]{};
+
+	public Sprite[] backdropImageList = new Sprite[]{};
 
     List<Player> playerList = new List<Player>(){};
 	List<Player> playerOrder = new List<Player>(){};
-	List<string> draftingDeck = new List<string>(){};
+	List<Kard> draftingDeck = new List<Kard>(){};
 	Player currentPlayer; // Which player's turn is it?
 
-	List<string> dealtCards = new List<string>(){};
+	List<Kard> dealtCards = new List<Kard>(){};
 
 	public GameObject cardPrefab;
 	public GameObject playerPrefab;
 	public GameObject dealtCardsDisplay;
 	public GameObject playersDisplay;
+
+	public GameObject header;
 
 	public int dealAmount = 2;
 	public int dealAmountOffset = 1;
@@ -159,6 +202,7 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	IEnumerator CreateDraftingDeck()
 	{
+		InitializeRandomGenerationRatioList();
 		for (int size = DECK_SIZE; size > 0 ; size--)
 		{
 			draftingDeck.Add(GenerateRandomCard());
@@ -169,10 +213,43 @@ public class GameMainControl : MonoBehaviour {
 	/// <summary>
 	/// Generates a random card. (Monster, Element, Weapon)
 	/// </summary>
-	string GenerateRandomCard()
+	Kard GenerateRandomCard()
 	{
-		return otherCards[Random.Range(0,otherCards.Count)];
-		//return "Im a Card!" + Random.Range(0,100).ToString();
+		string cardName = "---DEFAULT---";
+		CardType category;
+		Sprite image = null;
+		float HP;
+		float STR;
+		float DEF;
+		float AGI;
+		float INT;
+
+
+
+		int typeSelectorIndex = Random.Range(0,randomGenerationRatioList.Count);
+		CardType typeSelector = randomGenerationRatioList [typeSelectorIndex];
+		switch (typeSelector) {
+		case CardType.Monster:
+			cardName = allBaseMonsterNames [Random.Range (0, allBaseMonsterNames.Count)];
+			image = monsterImageList [Random.Range (0, monsterImageList.Length)];
+			break;
+		case CardType.Element:
+			cardName = allBaseElementNames [Random.Range (0, allBaseElementNames.Count)];
+			image = elementImageList [Random.Range (0, elementImageList.Length)];
+			break;
+		case CardType.Weapon:
+			cardName = allBaseWeaponNames [Random.Range (0, allBaseWeaponNames.Count)];
+			image = weaponImageList [Random.Range (0, weaponImageList.Length)];
+			break;
+		}
+			HP = Random.Range (25, 100);
+			STR = Random.Range (0, 3);
+			DEF = Random.Range (0, 3);
+			AGI = Random.Range (0, 3);
+			INT = Random.Range (0, 3);
+
+		Kard createdCard = new Kard (cardName,typeSelector,image,HP,STR,DEF,AGI,INT);
+		return createdCard;
 	}
 
 	/// <summary>
@@ -218,10 +295,14 @@ public class GameMainControl : MonoBehaviour {
 		dealAmount = playerOrder.Count * 2;
 		if (characterSelect) {
 			//show only base characters
-			dealtCards = new List<string>(allBaseMonsterNames);
+			List<Kard> baseMonsterCards = new List<Kard>();
+			foreach(string name in allBaseMonsterNames){ baseMonsterCards.Add (new Kard (name, CardType.Monster, monsterImageList[Random.Range(0,monsterImageList.Length)]));}
+			dealtCards = new List<Kard>(baseMonsterCards);
 		} else if (weaponSelect) {
 			//show only base weapons
-			dealtCards = new List<string>(allBaseWeaponNames);
+			List<Kard> baseWeaponCards = new List<Kard>();
+			foreach(string name in allBaseWeaponNames){ baseWeaponCards.Add (new Kard (name, CardType.Weapon, weaponImageList[Random.Range(0,weaponImageList.Length)]));}
+			dealtCards = new List<Kard>(baseWeaponCards);
 		} else {
 			dealtCards = draftingDeck.GetRange(0, dealAmount);
 			draftingDeck.RemoveRange(0, dealAmount);
@@ -305,7 +386,7 @@ public class GameMainControl : MonoBehaviour {
 	IEnumerator PickCardRandomly(Player player)
 	{
 		int randomIndex = Random.Range (0, dealtCards.Count);
-		string pickedCard = dealtCards[randomIndex];
+		Kard pickedCard = dealtCards[randomIndex];
 		player.myCards.Add(pickedCard);
 		dealtCards.RemoveAt(randomIndex);
 		StartCoroutine(UpdateCardsDisplay ());
@@ -316,12 +397,12 @@ public class GameMainControl : MonoBehaviour {
 	/// <summary>
 	/// Select a card in play for the current player. This is called from a card button.
 	/// </summary>
-	public void PickCard(string card)
+	public void PickCard(string cardName)
 	{
 		if (acceptInput) {
-			int cardIndex = dealtCards.IndexOf (card);
-			print ("index: " + cardIndex + ", card: " + card +", thing in list there: "+dealtCards[cardIndex]);
-			currentPlayer.myCards.Add (card);
+			Kard card = dealtCards.Find(p => p.name == cardName);
+			int cardIndex = dealtCards.IndexOf(card);
+			currentPlayer.myCards.Add(card);
 			dealtCards.RemoveAt (cardIndex);
 			StartCoroutine(UpdateCardsDisplay ());
 			FusePick (card);
@@ -345,7 +426,7 @@ public class GameMainControl : MonoBehaviour {
 		dealtCards.Clear();
 		yield return StartCoroutine(UpdateCardsDisplay());
 		foreach (Player player in playerList) {
-			foreach (string card in player.myCards) {
+			foreach (Kard card in player.myCards) {
 				//print (player.name + ":" + card);
 			}
 		}
@@ -402,38 +483,72 @@ public class GameMainControl : MonoBehaviour {
 	/// <summary>
 	/// Once a card is chosen, it must be integrated into the player's character/weapon/stats.
 	/// </summary>
-	/// <param name="card">Card.</param>
-	void FusePick(string card){
-		string statType = card.TrimStart(new char[]{'+'});
-		int statValue = card.LastIndexOf ("+") + 1;
-		switch (statType) {
-		case"STR":
-			currentPlayer.STR += statValue;
+	void FusePick(Kard card){
+		switch (card.category) {
+		case CardType.Monster:
+			if (currentPlayer.myCharacter != null) {
+				currentPlayer.myCharacter = CardFusion (currentPlayer.myCharacter, card);
+			} else {
+				currentPlayer.myCharacter = card;
+			}
 			break;
-		case"DEF":
-			currentPlayer.DEF += statValue;
+
+		case CardType.Weapon:
+			if (currentPlayer.myWeapon != null) {
+				currentPlayer.myWeapon = CardFusion (currentPlayer.myWeapon, card);
+			} else {
+				currentPlayer.myWeapon = card;
+			}
 			break;
-		case"AGI":
-			currentPlayer.AGI += statValue;
-			break;
-		case"INT":
-			currentPlayer.INT += statValue;
+
+		case CardType.Element:
+			if (currentPlayer.myElement != null) {
+				currentPlayer.myElement = CardFusion (currentPlayer.myElement, card);
+			} else {
+				currentPlayer.myElement = card;
+			}
 			break;
 		}
-
+		SetNewPlayerStats(card);
 	}
+
+
+	Kard CardFusion(Kard card1, Kard card2){
+		Debug.Log (card1);
+		Debug.Log (card2);
+		string fusedName = card1.name +"-"+ card2.name;
+		CardType fusedCategory = card1.category;
+		Sprite fusedImage = card1.image;
+		float fusedHP = card1.HP + card2.HP;
+		float fusedSTR = card1.STR + card2.STR;
+		float fusedDEF = card1.DEF + card2.DEF;
+		float fusedAGI = card1.AGI + card2.AGI;
+		float fusedINT = card1.INT + card2.INT;
+
+		Kard fusionCard = new Kard (fusedName, fusedCategory, fusedImage, fusedHP, fusedSTR, fusedDEF, fusedAGI, fusedINT);
+		return fusionCard;
+	}
+
+	void SetNewPlayerStats(Kard card){
+		currentPlayer.HP += card.HP;
+		currentPlayer.STR += card.STR;
+		currentPlayer.DEF += card.DEF;
+		currentPlayer.AGI += card.AGI;
+		currentPlayer.INT += card.INT;
+	}
+
 
 	/// <summary>
 	/// Adds the back the remaining dealt cards to the deck.
 	/// </summary>
 	IEnumerator ShuffleDeck()
 	{
-		string tempSwapHolder = "";
+		Kard tempSwapHolder = null;
 		for (int i = 0; i < draftingDeck.Count; i++) {
 			// Swap two cards
 			tempSwapHolder = draftingDeck[i];
 			int randomIndex = Random.Range(0, draftingDeck.Count);
-			string randomPick = draftingDeck[randomIndex];
+			Kard randomPick = draftingDeck[randomIndex];
 			draftingDeck[i] = randomPick;
 			draftingDeck[randomIndex] = tempSwapHolder;
 		}
@@ -461,20 +576,22 @@ public class GameMainControl : MonoBehaviour {
 		}
 		for (int cardIndex = 0; cardIndex < dealtCards.Count; cardIndex++)
 		{
-			string card = dealtCards[cardIndex];
+			Kard card = dealtCards[cardIndex];
 			GameObject newCard = Instantiate(cardPrefab);
-			newCard.GetComponentInChildren<Text> ().text = card;
-			newCard.name = card;
+			newCard.GetComponentInChildren<Text> ().text = card.name;
+			newCard.name = card.name;
+			newCard.transform.FindChild ("Image").GetComponent<Image>().sprite = card.image;
+			newCard.GetComponent<Image>().sprite = backdropImageList[(int)card.category];
 			newCard.transform.SetParent(dealtCardsDisplay.transform);
 			if (currentPlayer.isCPU) {
 				newCard.GetComponent<Button> ().interactable = false;
 				if (newRound) {
-					StartCoroutine (LerpOverTime (newCard, CANT_INTERACT_COLOR, TURN_FADE_IN_TIME));
+					StartCoroutine (FadeGroupOverTime (newCard, CANT_INTERACT_COLOR.a, TURN_FADE_IN_TIME));
 				}
 			} else {
 				newCard.GetComponent<Button> ().interactable = true;
 				if (newRound) {
-					StartCoroutine (LerpOverTime (newCard, CAN_INTERACT_COLOR, TURN_FADE_IN_TIME));
+					StartCoroutine (FadeGroupOverTime (newCard, CAN_INTERACT_COLOR.a, TURN_FADE_IN_TIME));
 				}
 			}
 		}
@@ -486,6 +603,7 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	IEnumerator UpdatePlayersDisplay()
 	{
+		
 		foreach (Transform oldPlayer in playersDisplay.transform)
 		{
 			Destroy(oldPlayer.gameObject);
@@ -496,18 +614,34 @@ public class GameMainControl : MonoBehaviour {
 			newPlayer.name = player.name;
 			newPlayer.GetComponentInChildren<Text>().text = player.name;
 			newPlayer.transform.SetParent(playersDisplay.transform);
+			newPlayer.transform.FindChild ("HP/Amount").GetComponent<Text> ().text = player.HP.ToString ();
 			newPlayer.transform.FindChild ("STR/Level").GetComponent<Text> ().text = player.STR.ToString ();
 			newPlayer.transform.FindChild ("DEF/Level").GetComponent<Text> ().text = player.DEF.ToString ();
 			newPlayer.transform.FindChild ("AGI/Level").GetComponent<Text> ().text = player.AGI.ToString ();
 			newPlayer.transform.FindChild ("INT/Level").GetComponent<Text> ().text = player.INT.ToString ();
 			try{
-			newPlayer.transform.FindChild ("Character/Name").GetComponent<Text> ().text = player.myCards[0];
-			newPlayer.transform.FindChild ("Weapon/Name").GetComponent<Text> ().text = player.myCards[1];
+				//Order is important here.
+				//first a character is chosen.
+				newPlayer.transform.FindChild ("Character/Name").GetComponent<Text> ().text = player.myCharacter.name;
+				newPlayer.transform.FindChild ("Character/Image").GetComponent<Image> ().sprite = player.myCharacter.image;
+				//then a weapon is chosen.
+				newPlayer.transform.FindChild ("Weapon/Name").GetComponent<Text> ().text = player.myWeapon.name;
+				newPlayer.transform.FindChild ("Weapon/Image").GetComponent<Image> ().sprite = player.myWeapon.image;
+				//then an element.
+				newPlayer.transform.FindChild ("Character").GetComponent<Image> ().sprite = player.myElement.image;
 			}catch{
 
 			}
 			if (player == currentPlayer) {
 				StartCoroutine(LerpOverTime(newPlayer, ACTIVE_PLAYER_COLOR, TURN_FADE_IN_TIME));
+			}
+		}
+		//Header visuals.
+		if (currentPlayer != null) {
+			header.transform.FindChild ("Header").GetComponent<Text> ().text = currentPlayer.name + "\'s turn";
+			header.GetComponent<Image> ().color = Color.clear;
+			if (!currentPlayer.isCPU) {
+				StartCoroutine (LerpOverTime (header, ACTIVE_PLAYER_COLOR, TURN_FADE_IN_TIME));
 			}
 		}
 		yield return null;
@@ -556,5 +690,18 @@ public class GameMainControl : MonoBehaviour {
 			}
 		}
 		myGroup.alpha = finalAlpha;
+	}
+
+	void InitializeRandomGenerationRatioList(){
+		randomGenerationRatioList.Clear ();
+		for (int i = 0; i < amountOfMonstersInGenerationList; i++) {
+			randomGenerationRatioList.Add(CardType.Monster);
+		}
+		for (int i = 0; i < amountOfWeaponsInGenerationList; i++) {
+			randomGenerationRatioList.Add(CardType.Weapon);
+		}
+		for (int i = 0; i < amountOfElementsInGenerationList; i++) {
+			randomGenerationRatioList.Add(CardType.Element);
+		}
 	}
 }

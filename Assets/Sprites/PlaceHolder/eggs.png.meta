@@ -1,0 +1,4325 @@
+fileFormatVersion: 2
+guid: 0c4ee4fe7e48fd64ba95984dc572d245
+timeCreated: 1457689593
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: eggs_0
+    21300002: eggs_1
+    21300004: eggs_2
+    21300006: eggs_3
+    21300008: eggs_4
+    21300010: eggs_5
+    21300012: eggs_6
+    21300014: eggs_7
+    21300016: eggs_8
+    21300018: eggs_9
+    21300020: eggs_10
+    21300022: eggs_11
+    21300024: eggs_12
+    21300026: eggs_13
+    21300028: eggs_14
+    21300030: eggs_15
+    21300032: eggs_16
+    21300034: eggs_17
+    21300036: eggs_18
+    21300038: eggs_19
+    21300040: eggs_20
+    21300042: eggs_21
+    21300044: eggs_22
+    21300046: eggs_23
+    21300048: eggs_24
+    21300050: eggs_25
+    21300052: eggs_26
+    21300054: eggs_27
+    21300056: eggs_28
+    21300058: eggs_29
+    21300060: eggs_30
+    21300062: eggs_31
+    21300064: eggs_32
+    21300066: eggs_33
+    21300068: eggs_34
+    21300070: eggs_35
+    21300072: eggs_36
+    21300074: eggs_37
+    21300076: eggs_38
+    21300078: eggs_39
+    21300080: eggs_40
+    21300082: eggs_41
+    21300084: eggs_42
+    21300086: eggs_43
+    21300088: eggs_44
+    21300090: eggs_45
+    21300092: eggs_46
+    21300094: eggs_47
+    21300096: eggs_48
+    21300098: eggs_49
+    21300100: eggs_50
+    21300102: eggs_51
+    21300104: eggs_52
+    21300106: eggs_53
+    21300108: eggs_54
+    21300110: eggs_55
+    21300112: eggs_56
+    21300114: eggs_57
+    21300116: eggs_58
+    21300118: eggs_59
+    21300120: eggs_60
+    21300122: eggs_61
+    21300124: eggs_62
+    21300126: eggs_63
+    21300128: eggs_64
+    21300130: eggs_65
+    21300132: eggs_66
+    21300134: eggs_67
+    21300136: eggs_68
+    21300138: eggs_69
+    21300140: eggs_70
+    21300142: eggs_71
+    21300144: eggs_72
+    21300146: eggs_73
+    21300148: eggs_74
+    21300150: eggs_75
+    21300152: eggs_76
+    21300154: eggs_77
+    21300156: eggs_78
+    21300158: eggs_79
+    21300160: eggs_80
+    21300162: eggs_81
+    21300164: eggs_82
+    21300166: eggs_83
+    21300168: eggs_84
+    21300170: eggs_85
+    21300172: eggs_86
+    21300174: eggs_87
+    21300176: eggs_88
+    21300178: eggs_89
+    21300180: eggs_90
+    21300182: eggs_91
+    21300184: eggs_92
+    21300186: eggs_93
+    21300188: eggs_94
+    21300190: eggs_95
+    21300192: eggs_96
+    21300194: eggs_97
+    21300196: eggs_98
+    21300198: eggs_99
+    21300200: eggs_100
+    21300202: eggs_101
+    21300204: eggs_102
+    21300206: eggs_103
+    21300208: eggs_104
+    21300210: eggs_105
+    21300212: eggs_106
+    21300214: eggs_107
+    21300216: eggs_108
+    21300218: eggs_109
+    21300220: eggs_110
+    21300222: eggs_111
+    21300224: eggs_112
+    21300226: eggs_113
+    21300228: eggs_114
+    21300230: eggs_115
+    21300232: eggs_116
+    21300234: eggs_117
+    21300236: eggs_118
+    21300238: eggs_119
+    21300240: eggs_120
+    21300242: eggs_121
+    21300244: eggs_122
+    21300246: eggs_123
+    21300248: eggs_124
+    21300250: eggs_125
+    21300252: eggs_126
+    21300254: eggs_127
+    21300256: eggs_128
+    21300258: eggs_129
+    21300260: eggs_130
+    21300262: eggs_131
+    21300264: eggs_132
+    21300266: eggs_133
+    21300268: eggs_134
+    21300270: eggs_135
+    21300272: eggs_136
+    21300274: eggs_137
+    21300276: eggs_138
+    21300278: eggs_139
+    21300280: eggs_140
+    21300282: eggs_141
+    21300284: eggs_142
+    21300286: eggs_143
+    21300288: eggs_144
+    21300290: eggs_145
+    21300292: eggs_146
+    21300294: eggs_147
+    21300296: eggs_148
+    21300298: eggs_149
+    21300300: eggs_150
+    21300302: eggs_151
+    21300304: eggs_152
+    21300306: eggs_153
+    21300308: eggs_154
+    21300310: eggs_155
+    21300312: eggs_156
+    21300314: eggs_157
+    21300316: eggs_158
+    21300318: eggs_159
+    21300320: eggs_160
+    21300322: eggs_161
+    21300324: eggs_162
+    21300326: eggs_163
+    21300328: eggs_164
+    21300330: eggs_165
+    21300332: eggs_166
+    21300334: eggs_167
+    21300336: eggs_168
+    21300338: eggs_169
+    21300340: eggs_170
+    21300342: eggs_171
+    21300344: eggs_172
+    21300346: eggs_173
+    21300348: eggs_174
+    21300350: eggs_175
+    21300352: eggs_176
+    21300354: eggs_177
+    21300356: eggs_178
+    21300358: eggs_179
+    21300360: eggs_180
+    21300362: eggs_181
+    21300364: eggs_182
+    21300366: eggs_183
+    21300368: eggs_184
+    21300370: eggs_185
+    21300372: eggs_186
+    21300374: eggs_187
+    21300376: eggs_188
+    21300378: eggs_189
+    21300380: eggs_190
+    21300382: eggs_191
+    21300384: eggs_192
+    21300386: eggs_193
+    21300388: eggs_194
+    21300390: eggs_195
+    21300392: eggs_196
+    21300394: eggs_197
+    21300396: eggs_198
+    21300398: eggs_199
+    21300400: eggs_200
+    21300402: eggs_201
+    21300404: eggs_202
+    21300406: eggs_203
+    21300408: eggs_204
+    21300410: eggs_205
+    21300412: eggs_206
+    21300414: eggs_207
+    21300416: eggs_208
+    21300418: eggs_209
+    21300420: eggs_210
+    21300422: eggs_211
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: eggs_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -36}
+        - {x: -21, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 29}
+        - {x: 26, y: 44}
+    - name: eggs_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -34}
+        - {x: -30, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: -27}
+        - {x: -27, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+        - {x: -18, y: 44}
+        - {x: -35, y: 22}
+    - name: eggs_3
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -36}
+        - {x: -26, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 25}
+        - {x: 19, y: 44}
+    - name: eggs_4
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -30}
+        - {x: -21, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 32}
+        - {x: 21, y: 44}
+    - name: eggs_5
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -36}
+        - {x: -22, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 22}
+        - {x: 25, y: 44}
+    - name: eggs_6
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -38}
+        - {x: -20, y: -44}
+        - {x: 16, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 24}
+        - {x: 27, y: 44}
+    - name: eggs_7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 44}
+        - {x: -20, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -39}
+        - {x: -25, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -40}
+        - {x: 35, y: 34}
+    - name: eggs_8
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -37}
+        - {x: -20, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 23}
+        - {x: 27, y: 44}
+    - name: eggs_9
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -14, y: 44}
+        - {x: -34, y: 38}
+        - {x: -35, y: 31}
+        - {x: -35, y: -30}
+        - {x: -22, y: -44}
+        - {x: 17, y: -44}
+        - {x: 33, y: -38}
+        - {x: 35, y: -35}
+        - {x: 35, y: 15}
+        - {x: 31, y: 37}
+    - name: eggs_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -35}
+        - {x: -28, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 34}
+        - {x: 19, y: 44}
+    - name: eggs_11
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -35, y: 23}
+        - {x: -35, y: -32}
+        - {x: -20, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 41}
+        - {x: 22, y: 44}
+    - name: eggs_12
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -26, y: 31}
+        - {x: -35, y: 18}
+        - {x: -35, y: -27}
+        - {x: -21, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 23}
+        - {x: 20, y: 44}
+    - name: eggs_13
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -31}
+        - {x: -30, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -24}
+        - {x: 35, y: 36}
+        - {x: 18, y: 44}
+    - name: eggs_14
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1320
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -32}
+        - {x: -18, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 32}
+        - {x: 17, y: 44}
+    - name: eggs_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -35}
+        - {x: -23, y: -44}
+        - {x: 28, y: -44}
+        - {x: 32, y: -43}
+        - {x: 35, y: -29}
+        - {x: 35, y: 22}
+        - {x: 17, y: 44}
+    - name: eggs_16
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -26, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -35}
+        - {x: -33, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 36}
+        - {x: 32, y: 41}
+    - name: eggs_17
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -21, y: 44}
+        - {x: -35, y: 28}
+        - {x: -35, y: -30}
+        - {x: -29, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 24}
+        - {x: 32, y: 38}
+    - name: eggs_18
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -40}
+        - {x: -33, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 39}
+        - {x: 30, y: 44}
+    - name: eggs_19
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 44}
+        - {x: -35, y: 36}
+        - {x: -35, y: -33}
+        - {x: -18, y: -44}
+        - {x: 13, y: -44}
+        - {x: 18, y: -43}
+        - {x: 35, y: -27}
+        - {x: 35, y: 20}
+        - {x: 29, y: 44}
+    - name: eggs_20
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -31}
+        - {x: -28, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 32}
+        - {x: 16, y: 44}
+    - name: eggs_21
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -40}
+        - {x: 35, y: 20}
+        - {x: 20, y: 44}
+    - name: eggs_22
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 44}
+        - {x: -22, y: 44}
+        - {x: -35, y: 39}
+        - {x: -35, y: -26}
+        - {x: -21, y: -44}
+        - {x: 17, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 21}
+    - name: eggs_23
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 32}
+        - {x: -35, y: -32}
+        - {x: -31, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -25}
+        - {x: 35, y: 19}
+        - {x: 18, y: 44}
+    - name: eggs_24
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -33, y: 34}
+        - {x: -35, y: 21}
+        - {x: -35, y: -30}
+        - {x: -19, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 19}
+        - {x: 19, y: 44}
+    - name: eggs_25
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 35}
+        - {x: -35, y: -27}
+        - {x: -19, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 27}
+        - {x: 25, y: 44}
+    - name: eggs_26
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 35}
+        - {x: 15, y: 44}
+    - name: eggs_27
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 44}
+        - {x: -25, y: 44}
+        - {x: -35, y: 39}
+        - {x: -35, y: -44}
+        - {x: 25, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 28}
+        - {x: 33, y: 40}
+    - name: eggs_28
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -36}
+        - {x: -23, y: -43}
+        - {x: -15, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 34}
+        - {x: 31, y: 44}
+    - name: eggs_29
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -28}
+        - {x: -29, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -40}
+        - {x: 35, y: 40}
+        - {x: 25, y: 44}
+    - name: eggs_30
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1232
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 44}
+        - {x: -14, y: 42}
+        - {x: -34, y: 24}
+        - {x: -35, y: 21}
+        - {x: -35, y: -28}
+        - {x: -21, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 34}
+        - {x: 18, y: 44}
+    - name: eggs_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 44}
+        - {x: -32, y: 29}
+        - {x: -35, y: 15}
+        - {x: -35, y: -28}
+        - {x: -22, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 21}
+        - {x: 17, y: 44}
+    - name: eggs_32
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -35, y: 28}
+        - {x: -35, y: -42}
+        - {x: -34, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 36}
+        - {x: 17, y: 44}
+    - name: eggs_33
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -40}
+        - {x: -31, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 19}
+        - {x: 20, y: 44}
+    - name: eggs_34
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -30}
+        - {x: -19, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 28}
+        - {x: 20, y: 44}
+    - name: eggs_35
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -29}
+        - {x: -21, y: -44}
+        - {x: 25, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 29}
+        - {x: 31, y: 44}
+    - name: eggs_36
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 40}
+        - {x: 25, y: 44}
+    - name: eggs_37
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -35, y: 40}
+        - {x: -35, y: -42}
+        - {x: -30, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 29}
+        - {x: 30, y: 44}
+    - name: eggs_38
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -36}
+        - {x: -20, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 26}
+        - {x: 28, y: 44}
+    - name: eggs_39
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -36}
+        - {x: -34, y: -42}
+        - {x: -26, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 28}
+        - {x: 29, y: 44}
+    - name: eggs_40
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -32}
+        - {x: -17, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 30}
+        - {x: 30, y: 44}
+    - name: eggs_41
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -31}
+        - {x: -26, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 21}
+        - {x: 20, y: 44}
+    - name: eggs_42
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 32}
+        - {x: -35, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 24}
+        - {x: 21, y: 44}
+    - name: eggs_43
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 44}
+        - {x: -25, y: 44}
+        - {x: -35, y: 41}
+        - {x: -35, y: -41}
+        - {x: -24, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 23}
+    - name: eggs_44
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 20}
+        - {x: -35, y: -29}
+        - {x: -18, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 18}
+        - {x: 27, y: 44}
+    - name: eggs_45
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -41}
+        - {x: -31, y: -44}
+        - {x: 27, y: -44}
+        - {x: 34, y: -42}
+        - {x: 35, y: -41}
+        - {x: 35, y: 40}
+        - {x: 23, y: 44}
+    - name: eggs_46
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1144
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -35}
+        - {x: -30, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 30}
+        - {x: 15, y: 44}
+    - name: eggs_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35, y: 19}
+        - {x: 29, y: 39}
+        - {x: 17, y: 44}
+        - {x: -17, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -33}
+        - {x: -18, y: -44}
+        - {x: 13, y: -44}
+        - {x: 17, y: -43}
+        - {x: 29, y: -33}
+        - {x: 35, y: -29}
+    - name: eggs_48
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 44}
+        - {x: -20, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -32}
+        - {x: -30, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 12}
+        - {x: 31, y: 29}
+    - name: eggs_49
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -32}
+        - {x: -29, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -25}
+        - {x: 35, y: 29}
+        - {x: 21, y: 44}
+    - name: eggs_50
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -22}
+        - {x: -33, y: -30}
+        - {x: -20, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -40}
+        - {x: 35, y: 28}
+        - {x: 18, y: 44}
+    - name: eggs_51
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -24, y: 44}
+        - {x: -34, y: 30}
+        - {x: -35, y: 22}
+        - {x: -35, y: -34}
+        - {x: -28, y: -43}
+        - {x: -25, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 37}
+        - {x: 33, y: 41}
+    - name: eggs_52
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 36}
+        - {x: -35, y: -29}
+        - {x: -18, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 42}
+        - {x: 31, y: 44}
+    - name: eggs_53
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 44}
+        - {x: -24, y: 44}
+        - {x: -35, y: 39}
+        - {x: -35, y: -29}
+        - {x: -28, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -35}
+        - {x: 35, y: 18}
+        - {x: 31, y: 35}
+    - name: eggs_54
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -38}
+        - {x: -21, y: -44}
+        - {x: 25, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 43}
+        - {x: 31, y: 44}
+    - name: eggs_55
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 41}
+        - {x: -35, y: -26}
+        - {x: -18, y: -44}
+        - {x: 17, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 26}
+        - {x: 26, y: 44}
+    - name: eggs_56
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 44}
+        - {x: -28, y: 44}
+        - {x: -34, y: 38}
+        - {x: -35, y: 34}
+        - {x: -35, y: -41}
+        - {x: -27, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 39}
+        - {x: 34, y: 41}
+    - name: eggs_57
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -38}
+        - {x: -31, y: -44}
+        - {x: 25, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 43}
+        - {x: 31, y: 44}
+    - name: eggs_58
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -28}
+        - {x: -22, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 22}
+        - {x: 18, y: 44}
+    - name: eggs_59
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 44}
+        - {x: -17, y: 44}
+        - {x: -35, y: 15}
+        - {x: -35, y: -22}
+        - {x: -23, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 18}
+        - {x: 32, y: 39}
+    - name: eggs_60
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -38}
+        - {x: -30, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 40}
+        - {x: 21, y: 44}
+    - name: eggs_61
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -27}
+        - {x: -29, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 19}
+        - {x: 18, y: 44}
+    - name: eggs_62
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1056
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -37}
+        - {x: -23, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 31}
+        - {x: 18, y: 44}
+    - name: eggs_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -30}
+        - {x: -29, y: -44}
+        - {x: 16, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 27}
+        - {x: 18, y: 44}
+    - name: eggs_64
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -40}
+        - {x: -26, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 32}
+        - {x: 32, y: 44}
+    - name: eggs_65
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -41}
+        - {x: -27, y: -44}
+        - {x: 17, y: -44}
+        - {x: 26, y: -42}
+        - {x: 35, y: -27}
+        - {x: 35, y: 41}
+        - {x: 25, y: 44}
+    - name: eggs_66
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 23}
+        - {x: -35, y: -26}
+        - {x: -19, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 24}
+        - {x: 16, y: 44}
+    - name: eggs_67
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -28}
+        - {x: -22, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 29}
+        - {x: 31, y: 44}
+    - name: eggs_68
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -31}
+        - {x: -23, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 25}
+        - {x: 22, y: 44}
+    - name: eggs_69
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -38}
+        - {x: -28, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 40}
+        - {x: 27, y: 44}
+    - name: eggs_70
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -43}
+        - {x: -33, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 42}
+        - {x: 28, y: 44}
+    - name: eggs_71
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -29}
+        - {x: -26, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 40}
+        - {x: 34, y: 44}
+    - name: eggs_72
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 16}
+        - {x: -35, y: -24}
+        - {x: -34, y: -32}
+        - {x: -26, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 31}
+        - {x: 29, y: 44}
+        - {x: -16, y: 44}
+        - {x: -31, y: 26}
+    - name: eggs_73
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -35}
+        - {x: -33, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 33}
+        - {x: 31, y: 44}
+    - name: eggs_74
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 44}
+        - {x: -16, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -26}
+        - {x: -22, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 17}
+        - {x: 31, y: 36}
+    - name: eggs_75
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -42}
+        - {x: -30, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 34}
+        - {x: 20, y: 44}
+    - name: eggs_76
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 44}
+        - {x: -35, y: 27}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 29}
+        - {x: 17, y: 44}
+    - name: eggs_77
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -33}
+        - {x: -24, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_78
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 968
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 17}
+        - {x: -35, y: -37}
+        - {x: -32, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 24}
+        - {x: 22, y: 44}
+    - name: eggs_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 32}
+        - {x: 13, y: 43}
+        - {x: 11, y: 44}
+        - {x: -11, y: 44}
+        - {x: -14, y: 42}
+        - {x: -25, y: 35}
+        - {x: -35, y: 20}
+        - {x: -35, y: -39}
+        - {x: -21, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 11}
+        - {x: 33, y: 20}
+    - name: eggs_80
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 18, y: 44}
+        - {x: -19, y: 44}
+        - {x: -35, y: 17}
+        - {x: -35, y: -29}
+        - {x: -20, y: -44}
+        - {x: 17, y: -44}
+        - {x: 33, y: -35}
+        - {x: 35, y: -27}
+        - {x: 35, y: 23}
+    - name: eggs_81
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 22, y: 44}
+        - {x: -15, y: 44}
+        - {x: -29, y: 39}
+        - {x: -35, y: 32}
+        - {x: -35, y: -39}
+        - {x: -34, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 20}
+        - {x: 31, y: 38}
+    - name: eggs_82
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 16, y: 44}
+        - {x: -31, y: 44}
+        - {x: -35, y: 41}
+        - {x: -35, y: -40}
+        - {x: -34, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 22}
+        - {x: 31, y: 36}
+    - name: eggs_83
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 38}
+        - {x: 33, y: 44}
+    - name: eggs_84
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 44}
+        - {x: -26, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -39}
+        - {x: -30, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 19}
+        - {x: 34, y: 23}
+    - name: eggs_85
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 44}
+        - {x: -35, y: 39}
+        - {x: -35, y: -38}
+        - {x: -32, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 40}
+        - {x: 34, y: 44}
+    - name: eggs_86
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -42}
+        - {x: -24, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -31, y: 38}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 33}
+        - {x: 23, y: 44}
+    - name: eggs_88
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -31, y: 38}
+        - {x: -35, y: 21}
+        - {x: -35, y: -34}
+        - {x: -16, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 23}
+        - {x: 18, y: 44}
+    - name: eggs_89
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 39}
+        - {x: 21, y: 44}
+      - - {x: -33, y: 40}
+        - {x: -30, y: 41}
+        - {x: -30, y: 44}
+        - {x: -34, y: 44}
+        - {x: -35, y: 43}
+    - name: eggs_90
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 20, y: 44}
+        - {x: -28, y: 44}
+        - {x: -35, y: 17}
+        - {x: -35, y: -40}
+        - {x: -21, y: -44}
+        - {x: 25, y: -44}
+        - {x: 34, y: -32}
+        - {x: 35, y: -28}
+        - {x: 35, y: 23}
+    - name: eggs_91
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -41}
+        - {x: -28, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 28}
+        - {x: 20, y: 44}
+    - name: eggs_92
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -38}
+        - {x: -30, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -25}
+        - {x: 35, y: 19}
+        - {x: 17, y: 44}
+    - name: eggs_93
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -32, y: 35}
+        - {x: -35, y: 17}
+        - {x: -35, y: -31}
+        - {x: -26, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 38}
+        - {x: 16, y: 44}
+    - name: eggs_94
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 880
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -39}
+        - {x: -33, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 23}
+        - {x: 18, y: 44}
+    - name: eggs_95
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -35}
+        - {x: -25, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 44}
+    - name: eggs_96
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26, y: 34}
+        - {x: 12, y: 44}
+        - {x: -22, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -40}
+        - {x: -21, y: -44}
+        - {x: 25, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 19}
+        - {x: 34, y: 23}
+    - name: eggs_97
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -27, y: 32}
+        - {x: -35, y: 11}
+        - {x: -35, y: -26}
+        - {x: -22, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 44}
+    - name: eggs_98
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -35, y: 33}
+        - {x: -35, y: -31}
+        - {x: -31, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 33}
+        - {x: 33, y: 44}
+    - name: eggs_99
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 40}
+        - {x: -35, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 39}
+        - {x: 32, y: 44}
+    - name: eggs_100
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -27}
+        - {x: -34, y: -33}
+        - {x: -23, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 23}
+        - {x: 23, y: 44}
+    - name: eggs_101
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -35, y: 20}
+        - {x: -35, y: -28}
+        - {x: -20, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 42}
+        - {x: 25, y: 44}
+    - name: eggs_102
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -26}
+        - {x: -18, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 30}
+        - {x: 22, y: 44}
+    - name: eggs_103
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25, y: 44}
+        - {x: -32, y: 33}
+        - {x: -35, y: 18}
+        - {x: -35, y: -30}
+        - {x: -22, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 42}
+        - {x: 25, y: 44}
+    - name: eggs_104
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -35, y: 28}
+        - {x: -35, y: -31}
+        - {x: -27, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 15}
+        - {x: 20, y: 44}
+    - name: eggs_105
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -39}
+        - {x: -21, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 31}
+        - {x: 31, y: 44}
+    - name: eggs_106
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -32}
+        - {x: -31, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 23}
+        - {x: 20, y: 44}
+    - name: eggs_107
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -32, y: 44}
+        - {x: -35, y: 42}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 34}
+        - {x: 28, y: 38}
+    - name: eggs_108
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -29}
+        - {x: -23, y: -43}
+        - {x: -21, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 30}
+        - {x: 22, y: 44}
+    - name: eggs_109
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -36}
+        - {x: -29, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 25}
+        - {x: 21, y: 44}
+    - name: eggs_110
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 792
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 35}
+        - {x: -35, y: -33}
+        - {x: -24, y: -44}
+        - {x: 18, y: -44}
+        - {x: 32, y: -39}
+        - {x: 35, y: -37}
+        - {x: 35, y: 35}
+        - {x: 25, y: 44}
+    - name: eggs_111
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -26}
+        - {x: -17, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 30}
+        - {x: 20, y: 44}
+    - name: eggs_112
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 35}
+        - {x: 32, y: 44}
+    - name: eggs_113
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -42}
+        - {x: -33, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 42}
+        - {x: 29, y: 44}
+    - name: eggs_114
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -35, y: 27}
+        - {x: -35, y: -31}
+        - {x: -30, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 22}
+        - {x: 16, y: 44}
+    - name: eggs_115
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -32, y: 35}
+        - {x: -35, y: 19}
+        - {x: -35, y: -37}
+        - {x: -31, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_116
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 44}
+        - {x: -35, y: 42}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 23}
+        - {x: 25, y: 44}
+    - name: eggs_117
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -30, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -38}
+        - {x: -24, y: -44}
+        - {x: 20, y: -44}
+        - {x: 32, y: -38}
+        - {x: 35, y: -32}
+        - {x: 35, y: 26}
+    - name: eggs_118
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -33}
+        - {x: -29, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 21}
+        - {x: 19, y: 44}
+    - name: eggs_119
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 23}
+        - {x: -35, y: -40}
+        - {x: -22, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 30}
+        - {x: 29, y: 44}
+    - name: eggs_120
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -27}
+        - {x: -28, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 33}
+        - {x: 27, y: 44}
+    - name: eggs_121
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -29}
+        - {x: -22, y: -44}
+        - {x: 15, y: -44}
+        - {x: 32, y: -38}
+        - {x: 35, y: -27}
+        - {x: 35, y: 17}
+        - {x: 17, y: 44}
+    - name: eggs_122
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 33}
+        - {x: 22, y: 44}
+    - name: eggs_123
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 44}
+        - {x: -35, y: 40}
+        - {x: -35, y: -32}
+        - {x: -30, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_124
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -39}
+        - {x: -19, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 19}
+        - {x: 18, y: 44}
+    - name: eggs_125
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 44}
+        - {x: -34, y: 44}
+        - {x: -35, y: 43}
+        - {x: -35, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 42}
+    - name: eggs_126
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 704
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 44}
+        - {x: -35, y: 30}
+        - {x: -35, y: -40}
+        - {x: -30, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 25}
+        - {x: 21, y: 44}
+    - name: eggs_127
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -42}
+        - {x: -34, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 44}
+    - name: eggs_128
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27, y: 44}
+        - {x: -23, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -32}
+        - {x: -21, y: -44}
+        - {x: 16, y: -44}
+        - {x: 20, y: -43}
+        - {x: 32, y: -32}
+        - {x: 35, y: -25}
+        - {x: 35, y: 42}
+    - name: eggs_129
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: 44}
+        - {x: -28, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -40}
+        - {x: -22, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 29}
+        - {x: 33, y: 42}
+    - name: eggs_130
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 17}
+        - {x: -35, y: -42}
+        - {x: -27, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 37}
+        - {x: 16, y: 44}
+    - name: eggs_131
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -28}
+        - {x: -21, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 26}
+        - {x: 24, y: 44}
+    - name: eggs_132
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 44}
+        - {x: -24, y: 31}
+        - {x: -35, y: 18}
+        - {x: -35, y: -26}
+        - {x: -17, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 37}
+        - {x: 15, y: 44}
+    - name: eggs_133
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 20}
+        - {x: -35, y: -30}
+        - {x: -30, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 20}
+        - {x: 21, y: 44}
+    - name: eggs_134
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -30}
+        - {x: -30, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_135
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 43}
+        - {x: 32, y: 44}
+    - name: eggs_136
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -18, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -39}
+        - {x: -19, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 30}
+    - name: eggs_137
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 16}
+        - {x: -35, y: -41}
+        - {x: -29, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 39}
+        - {x: 20, y: 44}
+    - name: eggs_138
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -33, y: 37}
+        - {x: -35, y: 28}
+        - {x: -35, y: -35}
+        - {x: -21, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 19}
+        - {x: 25, y: 44}
+    - name: eggs_139
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 44}
+        - {x: -24, y: 31}
+        - {x: -35, y: 18}
+        - {x: -35, y: -26}
+        - {x: -17, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 37}
+        - {x: 15, y: 44}
+    - name: eggs_140
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 42}
+        - {x: -35, y: -30}
+        - {x: -21, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 38}
+        - {x: 28, y: 44}
+    - name: eggs_141
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -18, y: 44}
+        - {x: -35, y: 36}
+        - {x: -35, y: -37}
+        - {x: -20, y: -43}
+        - {x: -18, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 14}
+        - {x: 26, y: 33}
+    - name: eggs_142
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 616
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -40}
+        - {x: -22, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 30}
+        - {x: 21, y: 44}
+    - name: eggs_143
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -32, y: 39}
+        - {x: -35, y: 23}
+        - {x: -35, y: -29}
+        - {x: -22, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 36}
+        - {x: 22, y: 44}
+    - name: eggs_144
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -29}
+        - {x: -25, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 25}
+        - {x: 17, y: 44}
+    - name: eggs_145
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -38}
+        - {x: -25, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 33}
+        - {x: 25, y: 44}
+    - name: eggs_146
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21, y: 44}
+        - {x: -30, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 17}
+        - {x: 29, y: 40}
+    - name: eggs_147
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 44}
+        - {x: -20, y: 44}
+        - {x: -27, y: 34}
+        - {x: -30, y: 28}
+        - {x: -35, y: 17}
+        - {x: -35, y: -38}
+        - {x: -21, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 39}
+        - {x: 34, y: 42}
+    - name: eggs_148
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -39}
+        - {x: -20, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 33}
+        - {x: 17, y: 44}
+    - name: eggs_149
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -29, y: 40}
+        - {x: -35, y: 16}
+        - {x: -35, y: -29}
+        - {x: -19, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 21}
+        - {x: 21, y: 44}
+    - name: eggs_150
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -17, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -27}
+        - {x: -29, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 16}
+        - {x: 30, y: 35}
+    - name: eggs_151
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -30}
+        - {x: -24, y: -44}
+        - {x: 17, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 21}
+        - {x: 18, y: 44}
+    - name: eggs_152
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 32}
+        - {x: -35, y: -28}
+        - {x: -32, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 32}
+        - {x: 27, y: 44}
+    - name: eggs_153
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 19}
+        - {x: -35, y: -40}
+        - {x: -23, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 44}
+    - name: eggs_154
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 16}
+        - {x: -35, y: -26}
+        - {x: -27, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -34}
+        - {x: 35, y: 22}
+        - {x: 27, y: 44}
+    - name: eggs_155
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -33, y: 27}
+        - {x: -35, y: 17}
+        - {x: -35, y: -29}
+        - {x: -23, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -35}
+        - {x: 35, y: 42}
+        - {x: 27, y: 44}
+    - name: eggs_156
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 27}
+        - {x: -35, y: -43}
+        - {x: -34, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -37}
+        - {x: 35, y: 29}
+        - {x: 29, y: 44}
+    - name: eggs_157
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31, y: 44}
+        - {x: -35, y: 32}
+        - {x: -35, y: -39}
+        - {x: -22, y: -44}
+        - {x: 30, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 43}
+        - {x: 32, y: 44}
+    - name: eggs_158
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 528
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 16}
+        - {x: -35, y: -38}
+        - {x: -19, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 23}
+        - {x: 19, y: 44}
+    - name: eggs_159
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -28}
+        - {x: -19, y: -44}
+        - {x: 17, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 38}
+        - {x: 19, y: 44}
+    - name: eggs_160
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -27}
+        - {x: -21, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 28}
+        - {x: 18, y: 44}
+    - name: eggs_161
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 26}
+        - {x: -35, y: -34}
+        - {x: -19, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 20}
+        - {x: 19, y: 44}
+    - name: eggs_162
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -39}
+        - {x: -25, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 24}
+        - {x: 29, y: 44}
+    - name: eggs_163
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -31, y: 39}
+        - {x: -35, y: 35}
+        - {x: -35, y: -35}
+        - {x: -30, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 39}
+        - {x: 26, y: 44}
+    - name: eggs_164
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 25}
+        - {x: -35, y: -36}
+        - {x: -29, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 24}
+        - {x: 22, y: 44}
+    - name: eggs_165
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -27}
+        - {x: -29, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 32}
+        - {x: 23, y: 44}
+    - name: eggs_166
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -29, y: 39}
+        - {x: -35, y: 18}
+        - {x: -35, y: -28}
+        - {x: -27, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 30}
+        - {x: 23, y: 44}
+    - name: eggs_167
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -33, y: 38}
+        - {x: -35, y: 25}
+        - {x: -35, y: -35}
+        - {x: -25, y: -44}
+        - {x: 27, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 44}
+    - name: eggs_168
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 27}
+        - {x: 20, y: 44}
+    - name: eggs_169
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -30}
+        - {x: -30, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 42}
+        - {x: 27, y: 44}
+    - name: eggs_170
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 44}
+        - {x: -24, y: 32}
+        - {x: -31, y: 19}
+        - {x: -35, y: 13}
+        - {x: -35, y: -40}
+        - {x: -21, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 44}
+    - name: eggs_171
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 44}
+        - {x: -23, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -28}
+        - {x: -22, y: -44}
+        - {x: 24, y: -44}
+        - {x: 28, y: -43}
+        - {x: 35, y: -35}
+        - {x: 35, y: 19}
+        - {x: 29, y: 43}
+    - name: eggs_172
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -33}
+        - {x: -18, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 34}
+        - {x: 20, y: 44}
+    - name: eggs_173
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -37}
+        - {x: -23, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 25}
+        - {x: 25, y: 44}
+    - name: eggs_174
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 440
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17, y: 44}
+        - {x: -19, y: 44}
+        - {x: -35, y: 21}
+        - {x: -35, y: -27}
+        - {x: -33, y: -37}
+        - {x: -25, y: -44}
+        - {x: 21, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 27}
+        - {x: 31, y: 39}
+    - name: eggs_175
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -28, y: 44}
+        - {x: -34, y: 40}
+        - {x: -35, y: 34}
+        - {x: -35, y: -37}
+        - {x: -27, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 33}
+        - {x: 32, y: 37}
+    - name: eggs_176
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 35}
+        - {x: -35, y: -35}
+        - {x: -19, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 34}
+        - {x: 28, y: 44}
+    - name: eggs_177
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 43}
+        - {x: 11, y: 44}
+        - {x: -14, y: 44}
+        - {x: -34, y: 29}
+        - {x: -35, y: 22}
+        - {x: -35, y: -27}
+        - {x: -22, y: -44}
+        - {x: 17, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 17}
+        - {x: 25, y: 33}
+    - name: eggs_178
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -34, y: 44}
+        - {x: -35, y: 35}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 36}
+        - {x: 23, y: 44}
+    - name: eggs_179
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -27}
+        - {x: -29, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -28}
+        - {x: 35, y: 35}
+        - {x: 19, y: 44}
+    - name: eggs_180
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -23, y: 44}
+        - {x: -31, y: 37}
+        - {x: -35, y: 23}
+        - {x: -35, y: -32}
+        - {x: -19, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -32}
+        - {x: 35, y: 32}
+        - {x: 29, y: 39}
+    - name: eggs_181
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -30}
+        - {x: -20, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 36}
+        - {x: 18, y: 44}
+    - name: eggs_182
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: -43}
+        - {x: -34, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -43}
+        - {x: 35, y: 28}
+        - {x: 26, y: 44}
+        - {x: -31, y: 44}
+        - {x: -35, y: 30}
+    - name: eggs_183
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -35, y: 27}
+        - {x: -35, y: -38}
+        - {x: -26, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 25}
+        - {x: 28, y: 44}
+    - name: eggs_184
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 44}
+        - {x: -14, y: 42}
+        - {x: -34, y: 25}
+        - {x: -35, y: 18}
+        - {x: -35, y: -24}
+        - {x: -16, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -27}
+        - {x: 35, y: 26}
+        - {x: 16, y: 44}
+    - name: eggs_185
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -28}
+        - {x: -19, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -39}
+        - {x: 35, y: 40}
+        - {x: 31, y: 44}
+    - name: eggs_186
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 44}
+        - {x: -35, y: 38}
+        - {x: -35, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 23}
+        - {x: 20, y: 44}
+    - name: eggs_187
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 44}
+        - {x: -21, y: 43}
+        - {x: -35, y: 17}
+        - {x: -35, y: -22}
+        - {x: -31, y: -37}
+        - {x: -28, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 40}
+        - {x: 25, y: 44}
+      - - {x: -35, y: 33}
+        - {x: -32, y: 34}
+        - {x: -32, y: 37}
+        - {x: -34, y: 39}
+        - {x: -35, y: 39}
+      - - {x: 28, y: 35}
+        - {x: 30, y: 33}
+        - {x: 33, y: 34}
+        - {x: 33, y: 37}
+        - {x: 31, y: 39}
+        - {x: 28, y: 38}
+    - name: eggs_188
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 44}
+        - {x: -18, y: 43}
+        - {x: -35, y: 18}
+        - {x: -35, y: -26}
+        - {x: -32, y: -39}
+        - {x: -28, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 22}
+        - {x: 19, y: 44}
+    - name: eggs_189
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15, y: 44}
+        - {x: -35, y: 44}
+        - {x: -35, y: -44}
+        - {x: 33, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 32}
+        - {x: 32, y: 37}
+    - name: eggs_190
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 352
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 23, y: 44}
+        - {x: -35, y: 44}
+        - {x: -35, y: -32}
+        - {x: -26, y: -43}
+        - {x: -22, y: -44}
+        - {x: 20, y: -44}
+        - {x: 35, y: -26}
+        - {x: 35, y: 19}
+    - name: eggs_191
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -29}
+        - {x: -23, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 40}
+        - {x: 31, y: 44}
+    - name: eggs_192
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -38}
+        - {x: -34, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 25}
+        - {x: 19, y: 44}
+    - name: eggs_193
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28, y: 44}
+        - {x: -26, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -38}
+        - {x: -27, y: -44}
+        - {x: 26, y: -44}
+        - {x: 35, y: -33}
+        - {x: 35, y: 31}
+        - {x: 34, y: 41}
+    - name: eggs_194
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 33, y: 44}
+        - {x: -35, y: 44}
+        - {x: -35, y: -26}
+        - {x: -22, y: -44}
+        - {x: 23, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 43}
+    - name: eggs_195
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 44}
+        - {x: -35, y: 29}
+        - {x: -35, y: -41}
+        - {x: -32, y: -44}
+        - {x: 34, y: -44}
+        - {x: 35, y: -40}
+        - {x: 35, y: 44}
+    - name: eggs_196
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 44}
+        - {x: -35, y: 44}
+        - {x: -35, y: -42}
+        - {x: -28, y: -44}
+        - {x: 24, y: -44}
+        - {x: 35, y: -30}
+        - {x: 35, y: 19}
+        - {x: 33, y: 28}
+    - name: eggs_197
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 44}
+        - {x: -35, y: 34}
+        - {x: -35, y: -36}
+        - {x: -21, y: -44}
+        - {x: 18, y: -44}
+        - {x: 35, y: -36}
+        - {x: 35, y: 44}
+    - name: eggs_198
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: -38}
+        - {x: -28, y: -44}
+        - {x: 22, y: -44}
+        - {x: 35, y: -38}
+        - {x: 35, y: 22}
+        - {x: 26, y: 44}
+        - {x: -27, y: 44}
+        - {x: -35, y: 25}
+    - name: eggs_199
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 44}
+        - {x: -35, y: -35}
+        - {x: -20, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_200
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 44}
+        - {x: -25, y: 38}
+        - {x: -35, y: 17}
+        - {x: -35, y: -32}
+        - {x: -29, y: -44}
+        - {x: 32, y: -44}
+        - {x: 35, y: -31}
+        - {x: 35, y: 25}
+        - {x: 17, y: 44}
+    - name: eggs_201
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 37}
+        - {x: -35, y: -29}
+        - {x: -30, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_202
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 44}
+        - {x: -35, y: 23}
+        - {x: -35, y: -36}
+        - {x: -33, y: -44}
+        - {x: 31, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 27}
+        - {x: 26, y: 44}
+    - name: eggs_203
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_204
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_205
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_206
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 264
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24, y: 44}
+        - {x: -35, y: 31}
+        - {x: -35, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_207
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 176
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 24}
+        - {x: -35, y: -27}
+        - {x: -22, y: -44}
+        - {x: 28, y: -44}
+        - {x: 35, y: -41}
+        - {x: 35, y: 31}
+        - {x: 30, y: 44}
+    - name: eggs_208
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 176
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 44}
+        - {x: -33, y: 43}
+        - {x: -35, y: 41}
+        - {x: -35, y: -35}
+        - {x: -32, y: -44}
+        - {x: 35, y: -44}
+        - {x: 35, y: 44}
+    - name: eggs_209
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 176
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 44}
+        - {x: -35, y: 23}
+        - {x: -35, y: -36}
+        - {x: -33, y: -44}
+        - {x: 29, y: -44}
+        - {x: 35, y: -42}
+        - {x: 35, y: 24}
+        - {x: 16, y: 44}
+    - name: eggs_210
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 176
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19, y: 44}
+        - {x: -35, y: 18}
+        - {x: -35, y: -31}
+        - {x: -19, y: -44}
+        - {x: 19, y: -44}
+        - {x: 35, y: -29}
+        - {x: 35, y: 37}
+        - {x: 18, y: 44}
+    - name: eggs_211
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 176
+        width: 70
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -27, y: 44}
+        - {x: -35, y: 22}
+        - {x: -35, y: -38}
+        - {x: -26, y: -44}
+        - {x: 15, y: -44}
+        - {x: 35, y: -35}
+        - {x: 35, y: 25}
+        - {x: 20, y: 44}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
