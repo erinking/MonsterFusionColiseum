@@ -34,6 +34,7 @@ public class GameMainControl : MonoBehaviour {
 	public GameObject playersDisplay;
 
 	public GameObject header;
+	public GameObject replayButton;
 
 	public int dealAmount = 2;
 	public int dealAmountOffset = 1;
@@ -64,12 +65,16 @@ public class GameMainControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine(GameLoop());
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+	}
+
+	public void StartGame(){
+		StartCoroutine(GameLoop());
 	}
 
 	/// <summary>
@@ -102,6 +107,7 @@ public class GameMainControl : MonoBehaviour {
         }
         yield return StartCoroutine(EndOfDrafting());
         yield return StartCoroutine(Battle());
+		yield return StartCoroutine(EndOfGame());
     }
 
     /// <summary>
@@ -120,6 +126,7 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	IEnumerator DeterminePlayers()
 	{
+		playerList.Clear ();
 		playerList.Add(new Player ("Player 1", false));
 		playerList.Add(new Player ("AI Opponent 1", true));
 		// PlayerOrder is a list used to run the game turns and picking order.
@@ -133,6 +140,7 @@ public class GameMainControl : MonoBehaviour {
 	/// </summary>
 	IEnumerator CreateDraftingDeck()
 	{
+		draftingDeck.Clear ();
 		InitializeRandomGenerationRatioList();
 		for (int size = DECK_SIZE; size > 0 ; size--)
 		{
@@ -634,5 +642,10 @@ public class GameMainControl : MonoBehaviour {
 		for (int i = 0; i < amountOfElementsInGenerationList; i++) {
 			randomGenerationRatioList.Add(CardType.Element);
 		}
+	}
+
+	IEnumerator EndOfGame(){
+		replayButton.SetActive (true);
+		yield return null;
 	}
 }
