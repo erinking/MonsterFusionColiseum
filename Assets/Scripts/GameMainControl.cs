@@ -455,7 +455,9 @@ public class GameMainControl : MonoBehaviour {
 		foreach (Transform oldCard in dealtCardsDisplay.transform)
 		{
 			oldCard.gameObject.SetActive (false);
-			StartCoroutine(DiscardVisual(oldCard.gameObject));
+			if (newRound) {
+				StartCoroutine (DiscardVisual (oldCard.gameObject));
+			}
 		}
 		for (int cardIndex = 0; cardIndex < dealtCards.Count; cardIndex++)
 		{
@@ -513,7 +515,7 @@ public class GameMainControl : MonoBehaviour {
 
 	IEnumerator DiscardVisual(GameObject cardVisual){
 		if (cardVisual.activeInHierarchy) {
-			yield return StartCoroutine (FadeGroupOverTime(cardVisual, 0, DISCARD_DURATION));
+			yield return StartCoroutine (LerpOverTime(cardVisual, Color.clear, DISCARD_DURATION));
 		}
 		Destroy (cardVisual);
 		yield return null;
@@ -540,7 +542,6 @@ public class GameMainControl : MonoBehaviour {
 			myImage.color = Color.Lerp (myImage.color, finalColor, (Time.time - initialTime) / duration);
 			yield return null;
 		}
-
 		myImage.color = finalColor;
 	}
 
