@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class GameMainControl : MonoBehaviour {
 
     
-    class Player{
-	   public string name;
-       public bool isCPU;
+    public class Player{
+		public string name;
+		public string myCharacter;
+		public string myWeapon;
+    	public bool isCPU;
 		public List<string> myCards;
 		public int STR;
 		public int DEF;
 		public int AGI;
+		public int INT;
         public Player(string name, bool isCPU){
 			this.name = name;
             this.isCPU = isCPU;
@@ -30,6 +33,7 @@ public class GameMainControl : MonoBehaviour {
 		public int STR;
 		public int DEF;
 		public int AGI;
+		public int INT;
 		public Kard(string name, CardType category, int STR, int DEF, int AGI){
 			this.name = name;
 			this.category = category;
@@ -72,7 +76,9 @@ public class GameMainControl : MonoBehaviour {
 	public float TIME_BETWEEN_TURNS = 100.4f;
 
 	public Color ACTIVE_PLAYER_COLOR = new Color (0.1f, 0.9f, 0.2f, 0.8f);
-
+	public Color WINNING_PLAYER_COLOR = Color.white;
+	public Color LOSING_PLAYER_COLOR = new Color (0.9f, 0.1f, 0.2f, 0.8f);
+	public float LOSER_ALPHA = 0.6f;
 
 	// Use this for initialization
 	void Start () {
@@ -351,6 +357,28 @@ public class GameMainControl : MonoBehaviour {
 
         yield return null;
    		}
+		// Determine winners, calculation required because there might be multiple winners. 
+		List<string> winners = new List<string>();
+		int currentBestScore = 0;
+		foreach (Player player in scores.Keys) {
+			if (scores [player] == currentBestScore) {
+				winners.Add (player.name);
+			} else if (scores [player] > currentBestScore) {
+				winners.Clear ();
+				winners.Add(player.name);
+				currentBestScore = scores [player];
+			}
+		}
+
+		foreach (Transform player in playersDisplay.transform){
+			//Visually display winners.
+			if (winners.Contains (player.gameObject.name)) {
+				yield return StartCoroutine (DisplayWinner (player.gameObject.name));
+			} else {
+				//They are a loser. Sorry.
+				yield return StartCoroutine (DisplayLoser (player.gameObject.name));
+			}
+		}
 	}
 
 	void FusePick(string card){
@@ -419,6 +447,7 @@ public class GameMainControl : MonoBehaviour {
 		foreach (Player player in playerList)
 		{
 			GameObject newPlayer = Instantiate(playerPrefab);
+			newPlayer.name = player.name;
 			newPlayer.GetComponentInChildren<Text>().text = player.name;
 			newPlayer.transform.SetParent(playersDisplay.transform);
 			newPlayer.transform.FindChild ("STR/Level").GetComponent<Text> ().text = player.STR.ToString ();
@@ -434,6 +463,19 @@ public class GameMainControl : MonoBehaviour {
 				newPlayer.GetComponent<Image>().color = ACTIVE_PLAYER_COLOR;
 			}
 		}
+		yield return null;
+	}
+
+	IEnumerator DisplayWinner(string playerName){
+		GameObject winningPlayer = playersDisplay.transform.FindChild(playerName).gameObject;
+		winningPlayer.GetComponent<Image>().color = WINNING_PLAYER_COLOR;
+		yield return null;
+	}
+
+	IEnumerator DisplayLoser(string playerName){
+		GameObject losingPlayer = playersDisplay.transform.FindChild(playerName).gameObject;
+		losingPlayer.GetComponent<Image>().color = LOSING_PLAYER_COLOR;
+		losingPlayer.GetComponent<CanvasGroup> ().alpha = LOSER_ALPHA;
 		yield return null;
 	}
 }
