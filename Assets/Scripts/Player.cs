@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Player : MonoBehaviour {
+public class Player {
 		public string name;
 		public Kard myCharacter;
 		public Kard myWeapon;
