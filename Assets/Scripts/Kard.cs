@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum CardType {Monster, Weapon, Element};
 public class Kard {
@@ -13,6 +14,8 @@ public class Kard {
 		public float DEF;
 		public float AGI;
 		public float INT;
+		public List<string> AFN = new List<string>();
+		
 		public Kard(string name, CardType category, Sprite image, float HP, float STR, float DEF, float AGI, float INT){
 			this.name = name;
 			this.category = category;
@@ -23,8 +26,20 @@ public class Kard {
 			this.AGI = AGI;
 			this.INT = INT;
 		}
+		
+		public Kard(string name, CardType category, Sprite image, List<string> affinity, List<float> stats) {
+			this.name = name;
+			this.category = category;
+			this.image = image;
+			this.AFN = affinity;
+			this.HP = stats[0];
+			this.STR = stats[1];
+			this.DEF = stats[2];
+			this.AGI = stats[3];
+			this.INT = stats[4];
+		}
 
-		public Kard(string name, CardType category, Sprite image){
+		public Kard(string name, CardType category, Sprite image){ //This would be a constructor for automatic generation using spreadsheets. TBI
 			this.name = name;
 			this.category = category;
 			this.image = image;

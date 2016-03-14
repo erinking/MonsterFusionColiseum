@@ -4,12 +4,30 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class GameMainControl : MonoBehaviour {
-
-	List<string> allBaseElementNames = new List<string>(){"fire","water","earth","air"};
-	List<string> allBaseMonsterNames = new List<string>(){"skink","fairy","undead","blobfish","human"};
+	
+	List<string> allBaseElementNames = new List<string>(){"Fire","Water","Earth","Air"};
+	
+	List<string> allBaseMonsterNames = new List<string>(){
+		"Sprite", "Blobfish", "Giant", "Gecko", "Ghost",
+		"Fairy Queen", "Nymph", "Spriggan", "Djinn", "Spectre",
+		"Flying Fish", "Crocodilus", "Kraken", "Naga", "Anglerfish",
+		"Elf", "Merp", "Golem", "Pyromancer", "Zombie",
+		"Drake", "Mosasaur", "Crag Dragon", "Lava Dragon", "Bone Dragon",
+		"Imp", "Depth Horror", "Skeleton", "Demon", "Night Lord"
+		};
+	
+	List<List<float>> allMonsterStats = new List<List<float>>{
+		new List<float> {50,4,3,6,7}, new List<float> {55,5,4,7,3}, new List<float> {45,3,7,5,6}, new List<float>{40,7,6,4,5}, new List<float>{60,6,5,3,4},
+		new List<float>{60,5,1,7,10}, new List<float>{60,5,3,9,6}, new List<float>{50,3,6,7,9}, new List<float>{45,7,5,6,8}, new List<float>{65,6,4,5,7},
+		new List<float>{60,5,3,9,6}, new List<float>{70,5,5,10,1}, new List<float>{55,4,7,8,5}, new List<float>{50,7,6,7,5}, new List<float>{65,7,5,7,3},
+		new List<float>{50,3,6,7,9}, new List<float>{55,4,7,8,5}, new List<float>{60,1,10,5,7}, new List<float>{50,4,9,4,8}, new List<float>{55,5,9,4,6},
+		new List<float>{45,8,6,5,7}, new List<float>{50,9,6,7,3}, new List<float>{50,6,8,4,7}, new List<float>{35,10,9,3,6}, new List<float>{50,9,7,4,5},
+		new List<float>{55,6,4,5,7}, new List<float>{70,7,5,6,3}, new List<float>{60,5,8,4,6}, new List<float>{55,9,7,3,5}, new List<float>{75,8,7,1,4}
+	};
+	
 	List<string> allBaseWeaponNames = new List<string>(){"dagger","meatstick","staff","bow"};
-
-	List<string> otherCardNames = new List<string>(){"+STR","+DEF","+AGI","+INT","++STR","++DEF","++AGI","++INT","+++STR","+++DEF","+++AGI","+++INT"};
+	
+	// List<string> otherCardNames = new List<string>(){"+STR","+DEF","+AGI","+INT","++STR","++DEF","++AGI","++INT","+++STR","+++DEF","+++AGI","+++INT"};
 	List<CardType> randomGenerationRatioList = new List<CardType>(){CardType.Monster,CardType.Weapon,CardType.Element};
 	public int amountOfMonstersInGenerationList = 1;
 	public int amountOfWeaponsInGenerationList = 1;
@@ -27,6 +45,11 @@ public class GameMainControl : MonoBehaviour {
 	Player currentPlayer; // Which player's turn is it?
 
 	List<Kard> dealtCards = new List<Kard>(){};
+	
+	/*Creating a deck of all monsters in the game using the base constructors defined in Kard.cs 
+	Shawn's code */
+	List<Kard> monsterDeck = new List<Kard>(){}; //name, category, image, stats (HP,STR,DEF,AGI,INT)
+	/* */
 
 	public GameObject cardPrefab;
 	public GameObject playerPrefab;
