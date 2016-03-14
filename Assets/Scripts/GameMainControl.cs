@@ -7,7 +7,7 @@ public class GameMainControl : MonoBehaviour {
 	
 	List<string> allBaseElementNames = new List<string>(){"Fire","Water","Earth","Air"};
 	
-	List<string> allBaseMonsterNames = new List<string>(){
+	List<string> allMonsterNames = new List<string>(){
 		"Sprite", "Blobfish", "Giant", "Gecko", "Ghost",
 		"Fairy Queen", "Nymph", "Spriggan", "Djinn", "Spectre",
 		"Flying Fish", "Crocodilus", "Kraken", "Naga", "Anglerfish",
@@ -15,6 +15,9 @@ public class GameMainControl : MonoBehaviour {
 		"Drake", "Mosasaur", "Crag Dragon", "Lava Dragon", "Bone Dragon",
 		"Imp", "Depth Horror", "Skeleton", "Demon", "Night Lord"
 		};
+	List<string> allBaseMonsterNames = new List<string>(){
+		"Sprite", "Blobfish", "Giant", "Gecko", "Ghost"
+	};
 	
 	List<List<float>> allMonsterStats = new List<List<float>>{
 		new List<float> {50,4,3,6,7}, new List<float> {55,5,4,7,3}, new List<float> {45,3,7,5,6}, new List<float>{40,7,6,4,5}, new List<float>{60,6,5,3,4},
