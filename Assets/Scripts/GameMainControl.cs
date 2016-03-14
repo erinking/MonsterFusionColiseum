@@ -399,7 +399,7 @@ public class GameMainControl : MonoBehaviour {
 			GameObject newCard = Instantiate(cardPrefab);
 			newCard.GetComponentInChildren<Text> ().text = card;
 			newCard.name = card;
-			//newCard.GetComponent<Button>().onClick.AddListener(() => {PickCard (card);});
+			newCard.GetComponent<Button>().onClick.AddListener(() => {PickCard (card);});
 			//print (card + " " + cardIndex);
 
 			//newCard.GetComponentInChildren<Image>().color = Random.ColorHSV();
