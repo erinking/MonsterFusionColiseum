@@ -26,7 +26,7 @@ public class SpellButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.gameObject.GetComponentInChildren<Text> ().text = spell.getName ();
+		//this.gameObject.GetComponentInChildren<Text> ().text = spell.getName ();
 	}
 
 	public PseudoSpellCard returnSpell(){

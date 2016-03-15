@@ -11,13 +11,41 @@ public class BattleLogic : MonoBehaviour {
 
 	BattleEngine engine;
 
-	//CPU Stuff
-	float CPU_THINK_DELAY = 1.5f;
+	const string PLAYER_1_TEXT = "Text A";
+	const string PLAYER_1_HEALTH_BAR_NAME = "Health A";
+	const string PLAYER_1_HEALTH_POINTS_NAME = "Health Points A";
+	const string PLAYER_1_NORMAL_ATTACK_BUTTON_NAME = "Monster A Normal Attack";
+	const string PLAYER_1_SPECIAL_ATTACK_BUTTON_NAME = "Monster A Special Attack";
 
+	PlayerName Player_1_Title_Text;
+	HealthBar Player_1_Health_Bar;
+	HealthPoints Player_1_Health_Points;
+	SpellButton	Player_1_Normal_Attack_Button;
+	SpellButton Player_1_Special_Attack_Button;
+
+
+	const string PLAYER_2_TEXT = "Text B";
+	const string PLAYER_2_HEALTH_BAR_NAME = "Health B";
+	const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
+	const string PLAYER_2_NORMAL_ATTACK_BUTTON_NAME = "Monster B Normal Attack";
+	const string PLAYER_2_SPECIAL_ATTACK_BUTTON_NAME = "Monster B Special Attack";
+
+	PlayerName Player_2_Title_Text;
+	HealthBar Player_2_Health_Bar;
+	HealthPoints Player_2_Health_Points;
+	SpellButton Player_2_Normal_Attack_Button;
+	SpellButton Player_2_Special_Attack_Button;
+
+	//CPU Stuff
+	const float CPU_THINK_DELAY = 1.5f;
+
+	//Basic Attack
+	PseudoSpellCard BASIC_ATTACK;
 
 	public BattleLogic(Player p1, Player p2){
 		player1 = p1;
 		player2 = p2;
+		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
 		StartCoroutine (BattleLoop());
 	}
 
@@ -39,6 +67,7 @@ public class BattleLogic : MonoBehaviour {
 
 		//Debug.Log ("WE ARE USING THIS THINGY!!!!!!!");
 
+		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
 		StartCoroutine (BattleLoop ());
 	}
 
@@ -65,6 +94,8 @@ public class BattleLogic : MonoBehaviour {
 		while (!engine.isBattleOver ()) {
 			yield return StartCoroutine (Attack (player_going_first, player_going_second));
 		}
+		yield return StartCoroutine (DisableButtons (player1));
+		yield return StartCoroutine (DisableButtons (player2));
 	}
 		
 	/// <summary>
@@ -76,7 +107,7 @@ public class BattleLogic : MonoBehaviour {
 	/// <returns>The battle.</returns>
 	IEnumerator BeginBattle(){
 		engine = new BattleEngine (player1, player2);
-		PseudoSpellCard p1_attack1 = new PseudoSpellCard ("Basic Attack 1", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
+		PseudoSpellCard p1_attack1 = BASIC_ATTACK;
 		PseudoSpellCard p1_attack2 = new PseudoSpellCard ("Water Spell 1", SpellType.MAGIC_ATTACK, 20, Elemental.WATER);
 
 
@@ -85,36 +116,58 @@ public class BattleLogic : MonoBehaviour {
 
 
 		//Ask the others about these lines...why doesn't using a variable here work?
-		GameObject.Find("Health A").GetComponent<HealthBar>().monster = engine.getMonsterControlledByPlayer (player1);
+		Player_1_Health_Bar = GameObject.Find(PLAYER_1_HEALTH_BAR_NAME).GetComponent<HealthBar>();
+		Player_1_Health_Bar.monster = engine.getMonsterControlledByPlayer (player1);
+
+		Player_1_Health_Points = GameObject.Find (PLAYER_1_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		Player_1_Health_Points.monster = engine.getMonsterControlledByPlayer (player1);
+
 
 		//Setting Up buttons for player 1
-		GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton>().spell = p1_attack1;
-		GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton> ().player_that_owns_this_button = player1;
+		Player_1_Normal_Attack_Button = GameObject.Find (PLAYER_1_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton>();
+		Player_1_Normal_Attack_Button.spell = p1_attack1;
+		Player_1_Normal_Attack_Button = GameObject.Find (PLAYER_1_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton> ();
+		Player_1_Normal_Attack_Button.player_that_owns_this_button = player1;
+		Player_1_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = p1_attack1.getName ();
 
-		GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton>().spell = p1_attack2;
-		GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton> ().player_that_owns_this_button = player1;
+		Player_1_Special_Attack_Button = GameObject.Find (PLAYER_1_SPECIAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton> ();
+		Player_1_Special_Attack_Button.spell = p1_attack2;
+		Player_1_Special_Attack_Button.player_that_owns_this_button = player1;
+		Player_1_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = p1_attack2.getName ();
 
-		GameObject.Find ("Text A").GetComponent<PlayerName> ().player = player1;
 
 
-		PseudoSpellCard p2_attack1 = new PseudoSpellCard ("Basic Attack 2", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
-		PseudoSpellCard p2_attack2 = new PseudoSpellCard ("Fire Spell 1", SpellType.MAGIC_ATTACK, 20, Elemental.WATER);
+		Player_1_Title_Text = GameObject.Find (PLAYER_1_TEXT).GetComponent<PlayerName> ();
+		Player_1_Title_Text.player = player1;
+
+
+		PseudoSpellCard p2_attack1 = BASIC_ATTACK;
+		PseudoSpellCard p2_attack2 = new PseudoSpellCard ("Fire Spell 1", SpellType.MAGIC_ATTACK, 20, Elemental.FIRE);
 
 		engine.getMonsterControlledByPlayer (player2).addSpell (p2_attack1);
 		engine.getMonsterControlledByPlayer (player2).addSpell (p2_attack2);
 
 		//Ask the others about this line...why doesn't using a variable here work?
-		GameObject.Find ("Health B").GetComponent<HealthBar>().monster = engine.getMonsterControlledByPlayer (player2);
+		Player_2_Health_Bar = GameObject.Find (PLAYER_2_HEALTH_BAR_NAME).GetComponent<HealthBar>();
+		Player_2_Health_Bar.monster = engine.getMonsterControlledByPlayer (player2);
+
+		Player_2_Health_Points = GameObject.Find (PLAYER_2_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		Player_2_Health_Points.monster = engine.getMonsterControlledByPlayer (player2);
 
 		//Setting up Buttons for player 2
-		GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton>().spell = p2_attack1;
-		GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton> ().player_that_owns_this_button = player2;
+		Player_2_Normal_Attack_Button = GameObject.Find (PLAYER_2_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton>();
+		Player_2_Normal_Attack_Button.spell = p2_attack1;
+		Player_2_Normal_Attack_Button.player_that_owns_this_button = player2;
+		Player_2_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = p2_attack1.getName ();
 
-		GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton>().spell = p2_attack2;
-		GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton> ().player_that_owns_this_button = player2;
 
+		Player_2_Special_Attack_Button = GameObject.Find (PLAYER_2_SPECIAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton> ();
+		Player_2_Special_Attack_Button.spell = p2_attack2;
+		Player_2_Special_Attack_Button.player_that_owns_this_button = player2;
+		Player_2_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = p2_attack2.getName ();
 
-		GameObject.Find ("Text B").GetComponent<PlayerName> ().player = player2;
+		Player_2_Title_Text = GameObject.Find (PLAYER_2_TEXT).GetComponent<PlayerName> ();
+		Player_2_Title_Text.player = player2;
 
 		yield return null;
 	}
@@ -127,23 +180,58 @@ public class BattleLogic : MonoBehaviour {
 	/// <param name="first_attacking_player">First attacking player.</param>
 	/// <param name="second_attacking_player">Second attacking player.</param>
 	IEnumerator Attack(Player first_attacking_player, Player second_attacking_player){
+		yield return StartCoroutine (DisableButtons (second_attacking_player));
 		if (first_attacking_player.isCPU) {
-			yield return new WaitForSeconds (CPU_THINK_DELAY);
 			yield return StartCoroutine (RandomAttack (first_attacking_player));
 		}
 		else {//Human player is this one
 			yield return StartCoroutine(WaitForPlayerAttack(first_attacking_player));
 		}
+		yield return StartCoroutine (EnableButtons (second_attacking_player));
+		yield return StartCoroutine (DisableButtons (first_attacking_player));
 		if (!engine.isBattleOver ()) {
 			if (second_attacking_player.isCPU) {
-				yield return new WaitForSeconds (CPU_THINK_DELAY);
 				yield return StartCoroutine (RandomAttack (second_attacking_player));
 			}
 			else {//Human Player is this one
 				yield return StartCoroutine(WaitForPlayerAttack(second_attacking_player));
 			}
 		}
+		yield return StartCoroutine (EnableButtons (first_attacking_player));
+		yield return null;
+	}
 
+	IEnumerator DisableButtons(Player p){
+		if (p == player1) {
+			Player_1_Normal_Attack_Button.GetComponentInParent<Button> ().interactable = false;
+			Player_1_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = "";
+			Player_1_Special_Attack_Button.GetComponentInParent<Button> ().interactable = false;
+			Player_1_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = "";
+		} else {
+			Player_2_Normal_Attack_Button.GetComponentInParent<Button> ().interactable = false;
+			Player_2_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = "";
+			Player_2_Special_Attack_Button.GetComponentInParent<Button> ().interactable = false;
+			Player_2_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = "";
+		}
+		yield return null;
+	}
+
+	IEnumerator EnableButtons(Player p){
+		if (p == player1) {
+			Player_1_Normal_Attack_Button.GetComponentInParent<Button> ().interactable = true;
+			Player_1_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = 
+				Player_1_Normal_Attack_Button.spell.getName();
+			Player_1_Special_Attack_Button.GetComponentInParent<Button> ().interactable = true;
+			Player_1_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = 
+				Player_1_Special_Attack_Button.spell.getName();
+		} else {
+			Player_2_Normal_Attack_Button.GetComponentInParent<Button> ().interactable = true;
+			Player_2_Normal_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = 
+				Player_2_Normal_Attack_Button.spell.getName();
+			Player_2_Special_Attack_Button.GetComponentInParent<Button> ().interactable = true;
+			Player_2_Special_Attack_Button.GetComponentInParent<Button> ().GetComponentInChildren<Text> ().text = 
+				Player_2_Special_Attack_Button.spell.getName();
+		}
 		yield return null;
 	}
 
@@ -154,6 +242,8 @@ public class BattleLogic : MonoBehaviour {
 	/// <returns>The attack.</returns>
 	/// <param name="attacker">Attacker.</param>
 	IEnumerator RandomAttack(Player attacker){
+		yield return new WaitForSeconds (CPU_THINK_DELAY);
+
 		List<PseudoSpellCard> spells = engine.getMonsterControlledByPlayer (attacker).getSpells ();
 
 		int index = Random.Range(0, spells.Count);
@@ -173,34 +263,34 @@ public class BattleLogic : MonoBehaviour {
 		yield return StartCoroutine (ResetButtonTriggers ());
 		while (true) {
 			//This button has been pressed
-			if (GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton> ().buttonPressed == true) {
+			if (Player_1_Normal_Attack_Button.buttonPressed == true) {
 				//The player owns this button, do the attack
-				if (GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton> ().player_that_owns_this_button == human) {
-					engine.playerAttacks (human, GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton> ().spell);
+				if (Player_1_Normal_Attack_Button.player_that_owns_this_button == human) {
+					engine.playerAttacks (human, Player_1_Normal_Attack_Button.spell);
 					break;
 				}
 			}
 
-			if (GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton> ().buttonPressed == true) {
+			if (Player_1_Special_Attack_Button.buttonPressed == true) {
 				//The player owns this button, do the attack
-				if (GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton> ().player_that_owns_this_button == human) {
-					engine.playerAttacks (human, GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton> ().spell);
+				if (Player_1_Special_Attack_Button.player_that_owns_this_button == human) {
+					engine.playerAttacks (human, Player_1_Special_Attack_Button.spell);
 					break;
 				}
 			}
 
-			if (GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton> ().buttonPressed == true) {
+			if (Player_2_Normal_Attack_Button.buttonPressed == true) {
 				//The player owns this button, do the attack
-				if (GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton> ().player_that_owns_this_button == human) {
-					engine.playerAttacks (human, GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton> ().spell);
+				if (Player_2_Normal_Attack_Button.player_that_owns_this_button == human) {
+					engine.playerAttacks (human, Player_2_Normal_Attack_Button.spell);
 					break;
 				}
 			}
 
-			if (GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton> ().buttonPressed == true) {
+			if (Player_2_Special_Attack_Button.buttonPressed == true) {
 				//The player owns this button, do the attack
-				if (GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton> ().player_that_owns_this_button == human) {
-					engine.playerAttacks (human, GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton> ().spell);
+				if (Player_2_Special_Attack_Button.player_that_owns_this_button == human) {
+					engine.playerAttacks (human, Player_2_Special_Attack_Button.spell);
 					break;
 				}
 			}
@@ -215,11 +305,11 @@ public class BattleLogic : MonoBehaviour {
 	/// </summary>
 	/// <returns>The button triggers.</returns>
 	IEnumerator ResetButtonTriggers(){
-		GameObject.Find ("Monster A Normal Attack").GetComponent<SpellButton> ().buttonPressed = false;
-		GameObject.Find ("Monster A Special Attack").GetComponent<SpellButton> ().buttonPressed = false;
+		Player_1_Normal_Attack_Button.buttonPressed = false;
+		Player_1_Special_Attack_Button.buttonPressed = false;
 
-		GameObject.Find ("Monster B Normal Attack").GetComponent<SpellButton> ().buttonPressed = false;
-		GameObject.Find ("Monster B Special Attack").GetComponent<SpellButton> ().buttonPressed = false;
+		Player_2_Normal_Attack_Button.buttonPressed = false;
+		Player_2_Special_Attack_Button.buttonPressed = false;
 
 		yield return null;
 	}
