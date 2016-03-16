@@ -21,6 +21,11 @@ public class BattleEngine {
 	float elemental_advantage = 2f;
 	float elemental_disadvantage = .5f;
 
+	string damage_done_to_player_1;
+	string damage_done_to_player_2;
+
+	const string DODGE_TEXT = "Dodge";
+	const string MISS_TEXT = "Miss";
 
 	/// <summary>
 	/// Initializes a new instance of the <see cref="BattleEngine"/> class.
@@ -96,18 +101,22 @@ public class BattleEngine {
 
 			damage = Mathf.Max (damage - defense, 1);
 
-			Debug.Log (attacking_mon.getMonsterOwner() + "'s " + attacking_mon.getMonsterName() + " casts " + spell.getName() + "!!!");
+			//Debug.Log (attacking_mon.getMonsterOwner() + "'s " + attacking_mon.getMonsterName() + " casts " + spell.getName() + "!!!");
 
 			bool missed = didAttackMiss (spell);
 			bool dodged = didOpponentDodge (defending_mon);
 
 			if (missed) {
 				Debug.Log (attacking_mon.getMonsterOwner () + "'s " + attacking_mon.getMonsterName () + " spell missed!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, MISS_TEXT);
 			} else if (dodged) {
 				Debug.Log (defending_mon.getMonsterOwner () + "'s " + defending_mon.getMonsterName () + " dodged the spell!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, DODGE_TEXT);
+
 			} else {
 				Debug.Log ("It hits for " + damage + " damage!!!");
 				defending_mon.takeDamage (damage);
+				setDamageTextForDamageDoneToMonster (defending_mon, damage.ToString());
 			}
 
 
@@ -122,29 +131,50 @@ public class BattleEngine {
 
 			damage = Mathf.Max (damage - defense, 1);
 
-			Debug.Log (attacking_mon.getMonsterOwner() + "'s "+ attacking_mon.getMonsterName() + " uses " + spell.getName() + "!!!");
+			//Debug.Log (attacking_mon.getMonsterOwner() + "'s "+ attacking_mon.getMonsterName() + " uses " + spell.getName() + "!!!");
 
 			bool missed = didAttackMiss (spell);
 			bool dodged = didOpponentDodge (defending_mon);
 
 			if (missed) {
 				Debug.Log (attacking_mon.getMonsterOwner () + "'s " + attacking_mon.getMonsterName () + " attack missed!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, MISS_TEXT);
 
 			} else if (dodged) {
 				Debug.Log (defending_mon.getMonsterOwner () + "'s " + defending_mon.getMonsterName () + " dodged the attack!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, DODGE_TEXT);
 
 			} else {
 				Debug.Log("It hits for " + damage + " damage!!!");
 				defending_mon.takeDamage (damage);
+				setDamageTextForDamageDoneToMonster (defending_mon, damage.ToString ());
 			}
 		}
 		else {//Someone messed up. I...I messed up.
 			Debug.Log("For Some reason, an unimplemented attack came through");
 		}
 
-		Debug.Log ("");
+		//Debug.Log ("");
 
 		checkWinCondition ();
+	}
+
+	void setDamageTextForDamageDoneToMonster(Monster player_hit, string text){
+		if (player_hit == monster1) {
+			damage_done_to_player_1 = text;
+		}
+		else {
+			damage_done_to_player_2 = text;
+		}
+	}
+
+	public string getDamageTextForDamageDoneToPlayer(Player p){
+		if (p == player1) {
+			return damage_done_to_player_1;
+		}
+		else {
+			return damage_done_to_player_2;
+		}
 	}
 
 	/// <summary>

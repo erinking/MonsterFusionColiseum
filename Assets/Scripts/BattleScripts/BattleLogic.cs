@@ -23,12 +23,20 @@ public class BattleLogic : MonoBehaviour {
 	SpellButton	Player_1_Normal_Attack_Button;
 	SpellButton Player_1_Special_Attack_Button;
 
+	const float PLAYER_1_DAMAGE_X = -246.0f;
+	const float PLAYER_1_DAMAGE_Y = 23.0f;
+	Vector3 PLAYER_1_DAMAGE_POSITION;
 
 	const string PLAYER_2_TEXT = "Text B";
 	const string PLAYER_2_HEALTH_BAR_NAME = "Health B";
 	const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
 	const string PLAYER_2_NORMAL_ATTACK_BUTTON_NAME = "Monster B Normal Attack";
 	const string PLAYER_2_SPECIAL_ATTACK_BUTTON_NAME = "Monster B Special Attack";
+
+	const float PLAYER_2_DAMAGE_X = 244.0f;
+	const float PLAYER_2_DAMAGE_Y = 23.0f;
+	Vector3 PLAYER_2_DAMAGE_POSITION;
+
 
 	PlayerName Player_2_Title_Text;
 	HealthBar Player_2_Health_Bar;
@@ -46,6 +54,10 @@ public class BattleLogic : MonoBehaviour {
 		player1 = p1;
 		player2 = p2;
 		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
+
+		PLAYER_1_DAMAGE_POSITION = new Vector3 (PLAYER_1_DAMAGE_X, PLAYER_1_DAMAGE_Y);
+		PLAYER_2_DAMAGE_POSITION = new Vector3 (PLAYER_2_DAMAGE_X, PLAYER_2_DAMAGE_Y);
+
 		StartCoroutine (BattleLoop());
 	}
 
@@ -66,6 +78,10 @@ public class BattleLogic : MonoBehaviour {
 		player2.INT = 2;
 
 		//Debug.Log ("WE ARE USING THIS THINGY!!!!!!!");
+
+		PLAYER_1_DAMAGE_POSITION = new Vector3 (PLAYER_1_DAMAGE_X, PLAYER_1_DAMAGE_Y);
+		PLAYER_2_DAMAGE_POSITION = new Vector3 (PLAYER_2_DAMAGE_X, PLAYER_2_DAMAGE_Y);
+
 
 		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
 		StartCoroutine (BattleLoop ());
@@ -187,6 +203,7 @@ public class BattleLogic : MonoBehaviour {
 		else {//Human player is this one
 			yield return StartCoroutine(WaitForPlayerAttack(first_attacking_player));
 		}
+		yield return ShowDamage (second_attacking_player);
 		yield return StartCoroutine (EnableButtons (second_attacking_player));
 		yield return StartCoroutine (DisableButtons (first_attacking_player));
 		if (!engine.isBattleOver ()) {
@@ -196,10 +213,58 @@ public class BattleLogic : MonoBehaviour {
 			else {//Human Player is this one
 				yield return StartCoroutine(WaitForPlayerAttack(second_attacking_player));
 			}
+
+			yield return ShowDamage (first_attacking_player);
 		}
 		yield return StartCoroutine (EnableButtons (first_attacking_player));
 		yield return null;
 	}
+
+	public GameObject damage_num;
+
+	IEnumerator ShowDamage(Player p){
+		Debug.Log ("MADE IT!!!!");
+
+		Vector2 point = GameObject.Find ("Canvas").GetComponent<RectTransform> ().anchoredPosition;
+		Vector3 point_as_vector3 = new Vector3 (point.x, point.y);
+		Debug.Log ("Canvas Point: " + point);
+
+		if (p == player1) {
+			GameObject a = Instantiate (damage_num);
+			a.transform.SetParent (GameObject.Find ("Canvas").GetComponent<RectTransform>().transform);
+			Debug.Log("Using position: " + PLAYER_1_DAMAGE_POSITION);
+			a.transform.position = PLAYER_1_DAMAGE_POSITION + point_as_vector3;
+			a.GetComponentInChildren<DamageIndicator>().damage = engine.getDamageTextForDamageDoneToPlayer (p);
+		}
+		else {
+			GameObject a = Instantiate (damage_num);
+			a.transform.SetParent (GameObject.Find ("Canvas").transform);
+			Debug.Log("Using position: " + PLAYER_2_DAMAGE_POSITION);
+			a.transform.position = PLAYER_2_DAMAGE_POSITION + point_as_vector3;
+			a.GetComponentInChildren<DamageIndicator>().damage = engine.getDamageTextForDamageDoneToPlayer (p);
+		}
+		yield return null;
+	}
+
+
+	/*public DamageIndicator damage_num;
+
+	IEnumerator ShowDamage(Player p){
+		Debug.Log ("MADE IT!!!!");
+		if (p == player1) {
+			DamageIndicator a = (DamageIndicator) Instantiate (damage_num);
+			a.transform.SetParent (GameObject.Find ("Canvas").transform);
+			a.transform.position = PLAYER_1_DAMAGE_POSITION;
+			a.damage = engine.getDamageTextForDamageDoneToPlayer (p);
+		}
+		else {
+			DamageIndicator a = (DamageIndicator) Instantiate (damage_num);
+			a.transform.SetParent (GameObject.Find ("Canvas").transform);
+			a.transform.position = PLAYER_2_DAMAGE_POSITION;
+			a.damage = engine.getDamageTextForDamageDoneToPlayer (p);
+		}
+		yield return null;
+	}*/
 
 	IEnumerator DisableButtons(Player p){
 		if (p == player1) {
@@ -257,7 +322,6 @@ public class BattleLogic : MonoBehaviour {
 	/// Waits for player attack. Attacks when the player presses a button
 	/// Current Bug, allows for clicking opponents buttons (nothing happens, purely visual)
 	/// </summary>
-	/// <returns>The for player attack.</returns>
 	/// <param name="human">Human.</param>
 	IEnumerator WaitForPlayerAttack(Player human){
 		yield return StartCoroutine (ResetButtonTriggers ());
