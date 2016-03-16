@@ -66,6 +66,9 @@ public class GameMainControl : MonoBehaviour {
 	public GameObject header;
 	public GameObject replayButton;
 
+	public AudioSource mainAudioSource;
+	public AudioClip cardClickSound;
+
 	public int dealAmount = 2;
 	public int dealAmountOffset = 1;
 
@@ -373,6 +376,7 @@ public class GameMainControl : MonoBehaviour {
 			currentPlayer.myCards.Add(card);
 			dealtCards.RemoveAt (cardIndex);
 			StartCoroutine(UpdateCardsDisplay ());
+			mainAudioSource.PlayOneShot(cardClickSound);
 			FusePick (card);
 			isCardSelected = true;
 		}
