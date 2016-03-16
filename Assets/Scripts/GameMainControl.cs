@@ -414,17 +414,18 @@ public class GameMainControl : MonoBehaviour {
 			int score = 0; // Against how many other players do they win?
 			foreach (Player opponent in playerList) {
 				if (opponent == player) {
-					Debug.Log ("Skipping a bad time.");
+					//Debug.Log ("Skipping a bad time.");
 					continue;
 				}
+
 				// Determine win condition here.
-				Debug.Log("Starting battle");
+				//Debug.Log("Starting battle");
 				bool playerOneWins;
 				if (battleLogicScript != null) {
-					Debug.Log ("Script is not null!");
+					//Debug.Log ("Script is not null!");
 					battleSimCanvas.gameObject.SetActive(true);
 					yield return StartCoroutine (battleLogicScript.StartBattleFromMain (player, opponent));
-					Debug.Log ("Made it out");
+					//Debug.Log ("Made it out");
 					playerOneWins = battleLogicScript.getWinner ();
 					battleSimCanvas.gameObject.SetActive(false);
 				}else{
@@ -436,7 +437,7 @@ public class GameMainControl : MonoBehaviour {
 				{
 					score++;
 				}
-				Debug.Log ("Finished battle");
+				//Debug.Log ("Finished battle");
 			}
 			//Debug.Log
 			scores [player] = score;
@@ -445,7 +446,7 @@ public class GameMainControl : MonoBehaviour {
 
         yield return null;
    		}
-		Debug.Log("FINISHED ALL THE BATTLES!!!!");
+		//Debug.Log("FINISHED ALL THE BATTLES!!!!");
 		// Determine winners, calculation required because there might be multiple winners. 
 		List<string> winners = new List<string>();
 		int currentBestScore = 0;

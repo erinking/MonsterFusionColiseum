@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// Battle engine simulates a fight between two given players, creating the monsters
@@ -18,11 +19,16 @@ public class BattleEngine {
 	bool winner_determined = false;
 
 	float same_type_attack_bonus = 1.1f;
-	float elemental_advantage = 2f;
-	float elemental_disadvantage = .5f;
+	float elemental_advantage = 1.0f;
+	float elemental_disadvantage = 1.0f;
 
 	string damage_done_to_player_1;
 	string damage_done_to_player_2;
+
+	const int HEALTH_DEBUFF_MULTIPLIER = 20;
+	const float SPELL_BASE_DMG = 20;
+
+	const float PERCENT_DODGE_INCREASE_PER_AGI_POINT = 1.0f;
 
 	const string DODGE_TEXT = "Dodge";
 	const string MISS_TEXT = "Miss";
@@ -87,7 +93,25 @@ public class BattleEngine {
 	/// <param name="spell">Spell.</param>
 	void attack(Monster attacking_mon, Monster defending_mon, PseudoSpellCard spell){
 		if (spell.getSpellType () == SpellType.DEBUFF) {
-			determineDebuff (defending_mon, spell);
+			bool missed = didAttackMiss (spell);
+			bool dodged = didOpponentDodge (defending_mon);
+
+			if (missed) {
+				Debug.Log (attacking_mon.getMonsterOwner () + "'s " + attacking_mon.getMonsterName () + " attack missed!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, MISS_TEXT);
+
+			} else if (dodged) {
+				Debug.Log (defending_mon.getMonsterOwner () + "'s " + defending_mon.getMonsterName () + " dodged the attack!!!");
+				setDamageTextForDamageDoneToMonster (defending_mon, DODGE_TEXT);
+
+			} else {
+				string debuff_info = determineDebuff (defending_mon, spell);
+				setDamageTextForDamageDoneToMonster (defending_mon, debuff_info);
+				float damage = SPELL_BASE_DMG;
+				defending_mon.takeDamage (damage);
+			}
+
+
 		}
 		else if (spell.getSpellType () == SpellType.HEAL) {
 			Debug.Log ("HEALs haven't been implemented yet.");
@@ -195,9 +219,39 @@ public class BattleEngine {
 	/// <param name="monster">Monster.</param>
 	bool didOpponentDodge(Monster monster){
 		float dodge_threshold = Random.Range (0.0f, 100.0f);
-		float dodge_chance = 4.0f * monster.getAgility ();
+		float dodge_chance = PERCENT_DODGE_INCREASE_PER_AGI_POINT * monster.getAgility ();
 
 		return dodge_chance >= dodge_threshold;
+	}
+
+
+	string determineDebuffBase(Monster mon, PseudoSpellCard attack, Elemental element){
+		string debuffed_stat;
+		if (element == Elemental.FIRE) {
+			mon.addAttack (-attack.getAttack ());
+			debuffed_stat = "-ATK";
+		}
+		else if (element == Elemental.WATER) {
+			mon.addAgility (-attack.getAttack ());
+			debuffed_stat = "-AGI";
+		} 
+		else if (element == Elemental.EARTH) {
+			mon.addDefense (-attack.getAttack ());
+			debuffed_stat = "-DEF";
+		}
+		else if (element == Elemental.WIND) {
+			mon.addIntellect (-attack.getAttack ());
+			debuffed_stat = "-INT";
+		}
+		else if (element == Elemental.DARK) {
+			mon.addHealth (-attack.getAttack ()*HEALTH_DEBUFF_MULTIPLIER);
+			debuffed_stat = "-HP";
+		}
+		else {
+			debuffed_stat = "???";
+			Debug.Log ("AAAAAAAH!!!!!");
+		}
+		return debuffed_stat;
 	}
 
 	/// <summary>
@@ -205,22 +259,17 @@ public class BattleEngine {
 	/// </summary>
 	/// <param name="mon">Mon.</param>
 	/// <param name="attack">Attack.</param>
-	void determineDebuff(Monster mon, PseudoSpellCard attack){
-		if (attack.getElement () == Elemental.FIRE) {
-			mon.addAttack (-attack.getAttack ());
+	string determineDebuff(Monster mon, PseudoSpellCard attack){
+		if(ElementCheck.baseElements.Contains(attack.getElement())){
+			return determineDebuffBase (mon, attack, attack.getElement ());
 		}
-		else if (attack.getElement () == Elemental.WATER) {
-			mon.addAgility (-attack.getAttack ());
+		else {//Tier 2
+			List<Elemental> makeup = ElementCheck.getElementalMakeup(attack.getElement());
+			string debuffs = determineDebuffBase (mon, attack, makeup[0]);
+			determineDebuffBase(mon, attack, makeup[1]);
+			return debuffs;
 		}
-		else if (attack.getElement () == Elemental.EARTH) {
-			mon.addDefense (-attack.getAttack ());
-		}
-		else if (attack.getElement () == Elemental.WIND) {
-			mon.addIntellect (-attack.getAttack ());
-		}
-		else if (attack.getElement () == Elemental.DARK) {
-			mon.addHealth (-attack.getAttack ());
-		}
+
 	}
 
 

@@ -12,34 +12,38 @@ public class BattleLogic : MonoBehaviour {
 	BattleEngine engine;
 
 	const string PLAYER_1_TEXT = "Text A";
+	const string PLAYER_1_MONSTER_NAME = "Monster A";
 	const string PLAYER_1_HEALTH_BAR_NAME = "Health A";
-	//const string PLAYER_1_HEALTH_POINTS_NAME = "Health Points A";
+	const string PLAYER_1_HEALTH_POINTS_NAME = "Health Points A";
 	const string PLAYER_1_NORMAL_ATTACK_BUTTON_NAME = "Monster A Normal Attack";
 	const string PLAYER_1_SPECIAL_ATTACK_BUTTON_NAME = "Monster A Special Attack";
 
 	PlayerName Player_1_Title_Text;
 	HealthBar Player_1_Health_Bar;
+	MonsterSprite Player_1_Monster;
 	HealthPoints Player_1_Health_Points;
 	SpellButton	Player_1_Normal_Attack_Button;
 	SpellButton Player_1_Special_Attack_Button;
 
-	const float PLAYER_1_DAMAGE_X = -246.0f;
-	const float PLAYER_1_DAMAGE_Y = 23.0f;
+	const float PLAYER_1_DAMAGE_X = -381.5f;
+	const float PLAYER_1_DAMAGE_Y = 26.0f;
 	Vector3 PLAYER_1_DAMAGE_POSITION;
 
 	const string PLAYER_2_TEXT = "Text B";
+	const string PLAYER_2_MONSTER_NAME = "Monster B";
 	const string PLAYER_2_HEALTH_BAR_NAME = "Health B";
-	//const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
+	const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
 	const string PLAYER_2_NORMAL_ATTACK_BUTTON_NAME = "Monster B Normal Attack";
 	const string PLAYER_2_SPECIAL_ATTACK_BUTTON_NAME = "Monster B Special Attack";
 
-	const float PLAYER_2_DAMAGE_X = 244.0f;
-	const float PLAYER_2_DAMAGE_Y = 23.0f;
+	const float PLAYER_2_DAMAGE_X = 381.5f;
+	const float PLAYER_2_DAMAGE_Y = 26.0f;
 	Vector3 PLAYER_2_DAMAGE_POSITION;
 
 
 	PlayerName Player_2_Title_Text;
 	HealthBar Player_2_Health_Bar;
+	MonsterSprite Player_2_Monster;
 	HealthPoints Player_2_Health_Points;
 	SpellButton Player_2_Normal_Attack_Button;
 	SpellButton Player_2_Special_Attack_Button;
@@ -64,7 +68,7 @@ public class BattleLogic : MonoBehaviour {
 	public IEnumerator StartBattleFromMain(Player p1, Player p2){
 		player1 = p1;
 		player2 = p2;
-		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 200, Elemental.NONE);
+		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 50, Elemental.NONE);
 
 		PLAYER_1_DAMAGE_POSITION = new Vector3 (PLAYER_1_DAMAGE_X, PLAYER_1_DAMAGE_Y);
 		PLAYER_2_DAMAGE_POSITION = new Vector3 (PLAYER_2_DAMAGE_X, PLAYER_2_DAMAGE_Y);
@@ -127,6 +131,19 @@ public class BattleLogic : MonoBehaviour {
 		}
 		yield return StartCoroutine (DisableButtons (player1));
 		yield return StartCoroutine (DisableButtons (player2));
+		yield return StartCoroutine (WaitForDamageToDisappear ());
+	}
+
+	IEnumerator WaitForDamageToDisappear(){
+		GameObject a = GameObject.Find ("DamageIndicator(Clone)");
+		while (a != null) {
+			yield return new WaitForSeconds (0.1f);
+		}
+		a = GameObject.Find ("DamageIndicator(Clone)");
+		while (a != null) {
+			yield return new WaitForSeconds (0.1f);
+		}
+		yield return null;
 	}
 		
 	/// <summary>
@@ -139,7 +156,7 @@ public class BattleLogic : MonoBehaviour {
 	IEnumerator BeginBattle(){
 		engine = new BattleEngine (player1, player2);
 		PseudoSpellCard p1_attack1 = BASIC_ATTACK;
-		PseudoSpellCard p1_attack2 = new PseudoSpellCard ("Water Spell 1", SpellType.MAGIC_ATTACK, 20, Elemental.WATER);
+		PseudoSpellCard p1_attack2 = ElementCheck.getSpellFromCards(player1.myCards);
 
 
 		engine.getMonsterControlledByPlayer (player1).addSpell (p1_attack1);
@@ -150,9 +167,12 @@ public class BattleLogic : MonoBehaviour {
 		Player_1_Health_Bar = GameObject.Find(PLAYER_1_HEALTH_BAR_NAME).GetComponent<HealthBar>();
 		Player_1_Health_Bar.monster = engine.getMonsterControlledByPlayer (player1);
 
-		//Player_1_Health_Points = GameObject.Find (PLAYER_1_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
-		//Player_1_Health_Points.monster = engine.getMonsterControlledByPlayer (player1);
+		Player_1_Health_Points = GameObject.Find (PLAYER_1_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		Player_1_Health_Points.monster = engine.getMonsterControlledByPlayer (player1);
 
+
+		Player_1_Monster = GameObject.Find (PLAYER_1_MONSTER_NAME).GetComponent<MonsterSprite> ();
+		Player_1_Monster.player = player1;
 
 		//Setting Up buttons for player 1
 		Player_1_Normal_Attack_Button = GameObject.Find (PLAYER_1_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton>();
@@ -173,7 +193,7 @@ public class BattleLogic : MonoBehaviour {
 
 
 		PseudoSpellCard p2_attack1 = BASIC_ATTACK;
-		PseudoSpellCard p2_attack2 = new PseudoSpellCard ("Fire Spell 1", SpellType.MAGIC_ATTACK, 20, Elemental.FIRE);
+		PseudoSpellCard p2_attack2 = ElementCheck.getSpellFromCards (player2.myCards);
 
 		engine.getMonsterControlledByPlayer (player2).addSpell (p2_attack1);
 		engine.getMonsterControlledByPlayer (player2).addSpell (p2_attack2);
@@ -182,8 +202,12 @@ public class BattleLogic : MonoBehaviour {
 		Player_2_Health_Bar = GameObject.Find (PLAYER_2_HEALTH_BAR_NAME).GetComponent<HealthBar>();
 		Player_2_Health_Bar.monster = engine.getMonsterControlledByPlayer (player2);
 
-		//Player_2_Health_Points = GameObject.Find (PLAYER_2_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
-		//Player_2_Health_Points.monster = engine.getMonsterControlledByPlayer (player2);
+		Player_2_Health_Points = GameObject.Find (PLAYER_2_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		Player_2_Health_Points.monster = engine.getMonsterControlledByPlayer (player2);
+
+		Player_2_Monster = GameObject.Find (PLAYER_2_MONSTER_NAME).GetComponent<MonsterSprite> ();
+		Player_2_Monster.player = player2;
+
 
 		//Setting up Buttons for player 2
 		Player_2_Normal_Attack_Button = GameObject.Find (PLAYER_2_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton>();
@@ -212,6 +236,7 @@ public class BattleLogic : MonoBehaviour {
 	/// <param name="second_attacking_player">Second attacking player.</param>
 	IEnumerator Attack(Player first_attacking_player, Player second_attacking_player){
 		yield return StartCoroutine (DisableButtons (second_attacking_player));
+		yield return StartCoroutine (EnableButtons (first_attacking_player));
 		if (first_attacking_player.isCPU) {
 			yield return StartCoroutine (RandomAttack (first_attacking_player));
 		}

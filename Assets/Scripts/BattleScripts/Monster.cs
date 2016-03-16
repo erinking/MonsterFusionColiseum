@@ -29,7 +29,7 @@ public class Monster{
 	/// Initializes a new instance of the <see cref="Monster"/> class.
 	/// </summary>
 	/// <param name="p">P.</param>
-	public Monster(Player p, Elemental monster_element = Elemental.NONE){
+	public Monster(Player p){
 		monster_owner = p.name;
 		health = p.HP;
 		maxHealth = health;
@@ -38,7 +38,7 @@ public class Monster{
 		defense = p.DEF;
 		agility = p.AGI;
 		intellect = p.INT;
-		ele = monster_element;
+		ele = ElementCheck.getMonsterElementFromCards(p.myCards);
 		isComputer = p.isCPU;
 
 		if (!isComputer) {
