@@ -268,7 +268,7 @@ public class BattleEngine {
 	/// Returns true if player1's monster won the battle
 	/// </summary>
 	/// <returns><c>true</c>, if player1 was the winner of the battle, <c>false</c> otherwise.</returns>
-	bool isPlayer1Winner (){
+	public bool isPlayer1Winner (){
 		return player1_is_the_winner;
 	}
 

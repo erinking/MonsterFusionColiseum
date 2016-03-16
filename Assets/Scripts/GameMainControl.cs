@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameMainControl : MonoBehaviour {
 	
@@ -59,6 +60,9 @@ public class GameMainControl : MonoBehaviour {
 	public GameObject dealtCardsDisplay;
 	public GameObject playersDisplay;
 
+	public Canvas battleSimCanvas;
+	private BattleLogic battleLogicScript = null;
+
 	public GameObject header;
 	public GameObject replayButton;
 
@@ -91,7 +95,6 @@ public class GameMainControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -403,24 +406,46 @@ public class GameMainControl : MonoBehaviour {
     /// </summary>
     IEnumerator Battle()
     {
+		// Get battle script from canvas object.
+		battleLogicScript = battleSimCanvas.GetComponent<BattleLogic>();
+
 		Dictionary<Player,int> scores = new Dictionary<Player,int>();
 		foreach (Player player in playerList){
 			int score = 0; // Against how many other players do they win?
 			foreach (Player opponent in playerList) {
+				if (opponent == player) {
+					Debug.Log ("Skipping a bad time.");
+					continue;
+				}
 				// Determine win condition here.
-				if((player.STR > opponent.STR && player.DEF > opponent.DEF)||
-					(player.STR > opponent.STR && player.AGI > opponent.AGI)||
-					(player.DEF > opponent.DEF && player.AGI > opponent.AGI))
+				Debug.Log("Starting battle");
+				bool playerOneWins;
+				if (battleLogicScript != null) {
+					Debug.Log ("Script is not null!");
+					battleSimCanvas.gameObject.SetActive(true);
+					yield return StartCoroutine (battleLogicScript.StartBattleFromMain (player, opponent));
+					Debug.Log ("Made it out");
+					playerOneWins = battleLogicScript.getWinner ();
+					battleSimCanvas.gameObject.SetActive(false);
+				}else{
+					playerOneWins = (player.STR > opponent.STR && player.DEF > opponent.DEF) ||
+					(player.STR > opponent.STR && player.AGI > opponent.AGI) ||
+					(player.DEF > opponent.DEF && player.AGI > opponent.AGI);
+				}
+				if(playerOneWins)
 				{
 					score++;
 				}
+				Debug.Log ("Finished battle");
 			}
+			//Debug.Log
 			scores [player] = score;
 			print (player.name + " : " + score.ToString ());
 
 
         yield return null;
    		}
+		Debug.Log("FINISHED ALL THE BATTLES!!!!");
 		// Determine winners, calculation required because there might be multiple winners. 
 		List<string> winners = new List<string>();
 		int currentBestScore = 0;

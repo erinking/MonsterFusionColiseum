@@ -13,7 +13,7 @@ public class BattleLogic : MonoBehaviour {
 
 	const string PLAYER_1_TEXT = "Text A";
 	const string PLAYER_1_HEALTH_BAR_NAME = "Health A";
-	const string PLAYER_1_HEALTH_POINTS_NAME = "Health Points A";
+	//const string PLAYER_1_HEALTH_POINTS_NAME = "Health Points A";
 	const string PLAYER_1_NORMAL_ATTACK_BUTTON_NAME = "Monster A Normal Attack";
 	const string PLAYER_1_SPECIAL_ATTACK_BUTTON_NAME = "Monster A Special Attack";
 
@@ -29,7 +29,7 @@ public class BattleLogic : MonoBehaviour {
 
 	const string PLAYER_2_TEXT = "Text B";
 	const string PLAYER_2_HEALTH_BAR_NAME = "Health B";
-	const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
+	//const string PLAYER_2_HEALTH_POINTS_NAME = "Health Points B";
 	const string PLAYER_2_NORMAL_ATTACK_BUTTON_NAME = "Monster B Normal Attack";
 	const string PLAYER_2_SPECIAL_ATTACK_BUTTON_NAME = "Monster B Special Attack";
 
@@ -50,7 +50,7 @@ public class BattleLogic : MonoBehaviour {
 	//Basic Attack
 	PseudoSpellCard BASIC_ATTACK;
 
-	public BattleLogic(Player p1, Player p2){
+	/*public BattleLogic(Player p1, Player p2){
 		player1 = p1;
 		player2 = p2;
 		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
@@ -58,13 +58,28 @@ public class BattleLogic : MonoBehaviour {
 		PLAYER_1_DAMAGE_POSITION = new Vector3 (PLAYER_1_DAMAGE_X, PLAYER_1_DAMAGE_Y);
 		PLAYER_2_DAMAGE_POSITION = new Vector3 (PLAYER_2_DAMAGE_X, PLAYER_2_DAMAGE_Y);
 
-		StartCoroutine (BattleLoop());
+
+	}*/
+
+	public IEnumerator StartBattleFromMain(Player p1, Player p2){
+		player1 = p1;
+		player2 = p2;
+		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 200, Elemental.NONE);
+
+		PLAYER_1_DAMAGE_POSITION = new Vector3 (PLAYER_1_DAMAGE_X, PLAYER_1_DAMAGE_Y);
+		PLAYER_2_DAMAGE_POSITION = new Vector3 (PLAYER_2_DAMAGE_X, PLAYER_2_DAMAGE_Y);
+
+		yield return StartCoroutine (BattleLoop ());
+	}
+
+	public bool getWinner(){
+		return engine.isPlayer1Winner ();
 	}
 
 	// Use this for initialization
 	//ONLY USE THIS FOR TESTING PURPOSES
 	void Start () {
-		player1 = new Player ("Bob", false);
+		/*player1 = new Player ("Bob", false);
 		player1.STR = 5;
 		player1.DEF = 5;
 		player1.AGI = 5;
@@ -84,7 +99,7 @@ public class BattleLogic : MonoBehaviour {
 
 
 		BASIC_ATTACK = new PseudoSpellCard("Basic Attack", SpellType.PHYSICAL_ATTACK, 10, Elemental.NONE);
-		StartCoroutine (BattleLoop ());
+		StartCoroutine (BattleLoop ());*/
 	}
 
 
@@ -135,8 +150,8 @@ public class BattleLogic : MonoBehaviour {
 		Player_1_Health_Bar = GameObject.Find(PLAYER_1_HEALTH_BAR_NAME).GetComponent<HealthBar>();
 		Player_1_Health_Bar.monster = engine.getMonsterControlledByPlayer (player1);
 
-		Player_1_Health_Points = GameObject.Find (PLAYER_1_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
-		Player_1_Health_Points.monster = engine.getMonsterControlledByPlayer (player1);
+		//Player_1_Health_Points = GameObject.Find (PLAYER_1_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		//Player_1_Health_Points.monster = engine.getMonsterControlledByPlayer (player1);
 
 
 		//Setting Up buttons for player 1
@@ -167,8 +182,8 @@ public class BattleLogic : MonoBehaviour {
 		Player_2_Health_Bar = GameObject.Find (PLAYER_2_HEALTH_BAR_NAME).GetComponent<HealthBar>();
 		Player_2_Health_Bar.monster = engine.getMonsterControlledByPlayer (player2);
 
-		Player_2_Health_Points = GameObject.Find (PLAYER_2_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
-		Player_2_Health_Points.monster = engine.getMonsterControlledByPlayer (player2);
+		//Player_2_Health_Points = GameObject.Find (PLAYER_2_HEALTH_POINTS_NAME).GetComponent<HealthPoints> ();
+		//Player_2_Health_Points.monster = engine.getMonsterControlledByPlayer (player2);
 
 		//Setting up Buttons for player 2
 		Player_2_Normal_Attack_Button = GameObject.Find (PLAYER_2_NORMAL_ATTACK_BUTTON_NAME).GetComponent<SpellButton>();
@@ -223,23 +238,23 @@ public class BattleLogic : MonoBehaviour {
 	public GameObject damage_num;
 
 	IEnumerator ShowDamage(Player p){
-		Debug.Log ("MADE IT!!!!");
+		//Debug.Log ("MADE IT!!!!");
 
 		Vector2 point = GameObject.Find ("Canvas").GetComponent<RectTransform> ().anchoredPosition;
 		Vector3 point_as_vector3 = new Vector3 (point.x, point.y);
-		Debug.Log ("Canvas Point: " + point);
+		//Debug.Log ("Canvas Point: " + point);
 
 		if (p == player1) {
 			GameObject a = Instantiate (damage_num);
 			a.transform.SetParent (GameObject.Find ("Canvas").GetComponent<RectTransform>().transform);
-			Debug.Log("Using position: " + PLAYER_1_DAMAGE_POSITION);
+			//Debug.Log("Using position: " + PLAYER_1_DAMAGE_POSITION);
 			a.transform.position = PLAYER_1_DAMAGE_POSITION + point_as_vector3;
 			a.GetComponentInChildren<DamageIndicator>().damage = engine.getDamageTextForDamageDoneToPlayer (p);
 		}
 		else {
 			GameObject a = Instantiate (damage_num);
 			a.transform.SetParent (GameObject.Find ("Canvas").transform);
-			Debug.Log("Using position: " + PLAYER_2_DAMAGE_POSITION);
+			//Debug.Log("Using position: " + PLAYER_2_DAMAGE_POSITION);
 			a.transform.position = PLAYER_2_DAMAGE_POSITION + point_as_vector3;
 			a.GetComponentInChildren<DamageIndicator>().damage = engine.getDamageTextForDamageDoneToPlayer (p);
 		}
@@ -307,6 +322,7 @@ public class BattleLogic : MonoBehaviour {
 	/// <returns>The attack.</returns>
 	/// <param name="attacker">Attacker.</param>
 	IEnumerator RandomAttack(Player attacker){
+		Debug.Log ("Wait time: " + CPU_THINK_DELAY);
 		yield return new WaitForSeconds (CPU_THINK_DELAY);
 
 		List<PseudoSpellCard> spells = engine.getMonsterControlledByPlayer (attacker).getSpells ();
